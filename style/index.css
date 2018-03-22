@@ -1,0 +1,126 @@
+/* Scss Document */
+body {
+  font-size: 14px;
+  overflow: hidden;
+  position: relative;
+  font-family: Tahoma,Arial,stheiti,"Droid Sans","Microsoft Yahei";
+  color: #333; }
+
+ul, ul li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px; }
+
+.clear {
+  clear: both; }
+
+a {
+  color: #999; }
+
+.topbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 42px;
+  line-height: 42px;
+  padding: 0 10px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid #e8e8e8; }
+  .topbar li {
+    float: left;
+    font-weight: 500; }
+    .topbar li:first-child {
+      width: 20%;
+      text-align: left;
+      color: #838383;
+      margin-right: 15%; }
+      .topbar li:first-child i {
+        margin-left: 5px; }
+
+.body {
+  margin-top: 42px; }
+  .body .gallery {
+    height: 120px;
+    width: 100%; }
+  .body .seach {
+    position: relative; }
+    .body .seach i {
+      color: #e8e8e8; }
+    .body .seach input {
+      border: 1px solid #e8e8e8; }
+    .body .seach button {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      height: 37px; }
+  .body .special-column {
+    text-align: center;
+    font-size: 12px; }
+    .body .special-column .am-u-sm-3 {
+      padding: 10px;
+      border-right: 1px solid #e8e8e8; }
+    .body .special-column .circle {
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      background: red; }
+    .body .special-column i {
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      color: #fff;
+      text-align: center;
+      display: block;
+      margin: auto;
+      line-height: 40px;
+      font-size: 18px; }
+  .body .list-header {
+    font-size: 14px;
+    font-weight: bold; }
+    .body .list-header ul {
+      width: 100%;
+      background-color: #e8e8e8;
+      float: left; }
+      .body .list-header ul li {
+        float: left;
+        padding: 0px 3%;
+        text-align: center;
+        margin: 5px 0px; }
+        .body .list-header ul li:last-child {
+          border-right: none; }
+    .body .list-header > div {
+      clear: both; }
+  .body .list-search {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px;
+    float: left;
+    width: 95%; }
+    .body .list-search i {
+      margin-left: 5px; }
+  .body .am-list > li {
+    padding: 10px 0px; }
+  .body .list-content {
+    font-size: 12px; }
+    .body .list-content h3 {
+      margin: 0px;
+      font-size: 15px; }
+    .body .list-content i {
+      font-size: 12px;
+      margin: 0 3px 0 10px;
+      color: #999; }
+    .body .list-content span {
+      font-size: 10px;
+      color: #999; }
+    .body .list-content button {
+      font-weight: bold; }
+
+.footer {
+  border-top: 1px solid #e8e8e8;
+  background-color: #fff; }
+  .footer li {
+    color: #999; }
+  .footer li.active a {
+    color: #e95738; }
