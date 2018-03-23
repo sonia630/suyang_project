@@ -47,9 +47,18 @@ a {
   padding-top: 42px;
   padding-bottom: 50px;
   overflow-x: hidden; }
-  .main-containter .gallery {
+  .main-containter .banner {
     height: 120px;
-    width: 100%; }
+    width: 100%;
+    position: relative; }
+    .main-containter .banner .swiper-pagination {
+      width: 100%;
+      bottom: 0px; }
+    .main-containter .banner .swiper-pagination-bullet {
+      margin: 0 5px; }
+    .main-containter .banner .swiper-pagination-bullet-active {
+      background-color: #ffffff;
+      opacity: 0.7; }
   .main-containter .seach {
     position: relative; }
     .main-containter .seach i {
