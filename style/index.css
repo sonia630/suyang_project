@@ -1,15 +1,17 @@
 /* Scss Document */
 body {
   font-size: 14px;
-  overflow: hidden;
-  position: relative;
-  font-family: Tahoma,Arial,stheiti,"Droid Sans","Microsoft Yahei";
+  font-family: Tahoma, Arial, stheiti, "Droid Sans", "Microsoft Yahei";
   color: #333; }
 
 ul, ul li {
   list-style: none;
   padding: 0px;
   margin: 0px; }
+
+.am-btn-warning {
+  background-color: #F4AB63;
+  border-color: #F4AB63; }
 
 .clear {
   clear: both; }
@@ -26,6 +28,7 @@ a {
   line-height: 42px;
   padding: 0 10px;
   font-size: 16px;
+  z-index: 999;
   background: rgba(255, 255, 255, 0.8);
   border-bottom: 1px solid #e8e8e8; }
   .topbar li {
@@ -39,34 +42,39 @@ a {
       .topbar li:first-child i {
         margin-left: 5px; }
 
-.body {
-  margin-top: 42px; }
-  .body .gallery {
+.main-containter {
+  height: 100%;
+  padding-top: 42px;
+  padding-bottom: 50px;
+  overflow-x: hidden; }
+  .main-containter .gallery {
     height: 120px;
     width: 100%; }
-  .body .seach {
+  .main-containter .seach {
     position: relative; }
-    .body .seach i {
+    .main-containter .seach i {
       color: #e8e8e8; }
-    .body .seach input {
+    .main-containter .seach input {
       border: 1px solid #e8e8e8; }
-    .body .seach button {
+    .main-containter .seach button {
       position: absolute;
       right: 0px;
       top: 0px;
       height: 37px; }
-  .body .special-column {
+  .main-containter .special-column {
     text-align: center;
     font-size: 12px; }
-    .body .special-column .am-u-sm-3 {
+    .main-containter .special-column .am-u-sm-3 {
       padding: 10px;
       border-right: 1px solid #e8e8e8; }
-    .body .special-column .circle {
+      .main-containter .special-column .am-u-sm-3:last-child {
+        border-right: 0px; }
+    .main-containter .special-column .circle {
       border-radius: 50%;
       width: 20px;
       height: 20px;
       background: red; }
-    .body .special-column i {
+    .main-containter .special-column i {
       border-radius: 50%;
       width: 40px;
       height: 40px;
@@ -76,45 +84,64 @@ a {
       margin: auto;
       line-height: 40px;
       font-size: 18px; }
-  .body .list-header {
+  .main-containter .list-header {
     font-size: 14px;
     font-weight: bold; }
-    .body .list-header ul {
+    .main-containter .list-header ul {
       width: 100%;
-      background-color: #e8e8e8;
       float: left; }
-      .body .list-header ul li {
+      .main-containter .list-header ul li {
         float: left;
-        padding: 0px 3%;
-        text-align: center;
-        margin: 5px 0px; }
-        .body .list-header ul li:last-child {
+        width: 15%;
+        padding: 10px 0px;
+        color: #666; }
+        .main-containter .list-header ul li:nth-of-type(3), .main-containter .list-header ul li:nth-of-type(4) {
+          width: 21%; }
+        .main-containter .list-header ul li:nth-of-type(5) {
+          width: 28%; }
+        .main-containter .list-header ul li.active {
+          border-bottom: 1px solid #F4AB63;
+          color: #F4AB63; }
+        .main-containter .list-header ul li span {
+          border-right: 1px solid #e8e8e8;
+          display: block;
+          margin: 0px 5%;
+          float: left;
+          width: 100%;
+          text-align: center;
+          padding: 0px;
+          line-height: 1em; }
+        .main-containter .list-header ul li:last-child span {
           border-right: none; }
-    .body .list-header > div {
+    .main-containter .list-header > div {
       clear: both; }
-  .body .list-search {
+  .main-containter .list-search {
+    background-color: #f3f3f3;
     font-size: 14px;
     font-weight: bold;
-    margin: 5px;
+    padding: 5px 10px;
     float: left;
-    width: 95%; }
-    .body .list-search i {
+    width: 100%;
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+    color: #666; }
+    .main-containter .list-search i {
       margin-left: 5px; }
-  .body .am-list > li {
+  .main-containter .am-list > li {
     padding: 10px 0px; }
-  .body .list-content {
+  .main-containter .list-content {
     font-size: 12px; }
-    .body .list-content h3 {
+    .main-containter .list-content h3 {
       margin: 0px;
       font-size: 15px; }
-    .body .list-content i {
+    .main-containter .list-content i {
       font-size: 12px;
       margin: 0 3px 0 10px;
       color: #999; }
-    .body .list-content span {
+    .main-containter .list-content span {
       font-size: 10px;
       color: #999; }
-    .body .list-content button {
+    .main-containter .list-content button {
       font-weight: bold; }
 
 .footer {
@@ -123,4 +150,19 @@ a {
   .footer li {
     color: #999; }
   .footer li.active a {
-    color: #e95738; }
+    color: #F4AB63; }
+
+.admin-sidebar {
+  width: inherit; }
+
+.admin-content, .admin-sidebar {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; }
+
+.admin-sidebar {
+  width: 260px;
+  min-height: 100%;
+  float: left;
+  border-right: 1px solid #cecece; }
