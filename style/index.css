@@ -74,18 +74,11 @@ a {
  /***
  therapist list
 */ }
-  .main-containter .banner {
-    height: 120px;
-    width: 100%;
-    position: relative; }
-    .main-containter .banner .swiper-pagination {
-      width: 100%;
-      bottom: 0px; }
-    .main-containter .banner .swiper-pagination-bullet {
-      margin: 0 5px; }
-    .main-containter .banner .swiper-pagination-bullet-active {
-      background-color: #ffffff;
-      opacity: 0.7; }
+  .main-containter .am-slider-default .am-control-nav {
+    bottom: 10px; }
+  .main-containter .am-slider-default .am-control-nav li a.am-active {
+    background-color: #fff;
+    opacity: 0.9; }
   .main-containter .special-column {
     text-align: center;
     font-size: 12px; }
