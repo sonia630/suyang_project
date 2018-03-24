@@ -318,4 +318,12 @@ service detail
   height: 60px;
   padding: 0px 2%; }
 
+/**
+modal
+ */
+.complete-modal {
+  margin: 12% 5%; }
+  .complete-modal button {
+    margin: 8% 0px; }
+
 /*# sourceMappingURL=index.css.map */
