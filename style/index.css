@@ -9,16 +9,24 @@ ul, ul li {
   padding: 0px;
   margin: 0px; }
 
-.am-btn-warning {
+.am-btn-primary {
   background-color: #F4AB63;
   border-color: #F4AB63; }
+  .am-btn-primary:hover {
+    background-color: #e95738;
+    border-color: #e95738; }
 
 .clear {
   clear: both; }
 
 a {
-  color: #999; }
+  color: #F4AB63; }
+  a:hover {
+    color: #e95738; }
 
+/**
+  home page
+ */
 .topbar {
   position: fixed;
   left: 0;
@@ -46,7 +54,26 @@ a {
   height: 100%;
   padding-top: 42px;
   padding-bottom: 50px;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  /*
+  .seach {
+    position: relative;
+    i {
+      color: #e8e8e8
+    }
+    input {
+      border: 1px solid $borderColor;
+    }
+    button {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      height: 37px;
+    }
+  }*/
+ /***
+ therapist list
+*/ }
   .main-containter .banner {
     height: 120px;
     width: 100%;
@@ -59,17 +86,6 @@ a {
     .main-containter .banner .swiper-pagination-bullet-active {
       background-color: #ffffff;
       opacity: 0.7; }
-  .main-containter .seach {
-    position: relative; }
-    .main-containter .seach i {
-      color: #e8e8e8; }
-    .main-containter .seach input {
-      border: 1px solid #e8e8e8; }
-    .main-containter .seach button {
-      position: absolute;
-      right: 0px;
-      top: 0px;
-      height: 37px; }
   .main-containter .special-column {
     text-align: center;
     font-size: 12px; }
@@ -136,8 +152,13 @@ a {
     color: #666; }
     .main-containter .list-search i {
       margin-left: 5px; }
+  .main-containter .am-list .am-u-sm-3 {
+    padding-left: 10px; }
   .main-containter .am-list > li {
-    padding: 10px 0px; }
+    padding: 10px 0px;
+    border: 1px solid #f1f1f1;
+    border-right: none;
+    border-left: none; }
   .main-containter .list-content {
     font-size: 12px; }
     .main-containter .list-content h3 {
@@ -152,10 +173,53 @@ a {
       color: #999; }
     .main-containter .list-content button {
       font-weight: bold; }
+    .main-containter .list-content .am-fr {
+      text-align: right; }
+      .main-containter .list-content .am-fr p {
+        color: #878787;
+        line-height: 3em; }
+    .main-containter .list-content .info {
+      clear: both;
+      color: #666;
+      font-size: 13px; }
+  .main-containter .service-list .cost {
+    line-height: 2.5em; }
+    .main-containter .service-list .cost span:first-child {
+      color: #e95738;
+      font-size: 16px; }
+    .main-containter .service-list .cost span:last-child {
+      color: #878787;
+      font-size: 16px; }
+  .main-containter .service-list p {
+    margin: 0px; }
+  .main-containter .therapist-list .list-search {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+    float: left;
+    width: 100%;
+    border-top: 8px solid #e8e8e8;
+    color: #666;
+    background-color: #fff;
+    border-bottom: none; }
+  .main-containter .therapist-list .excellent {
+    background: url(../images/excellent.png) no-repeat center;
+    position: absolute;
+    width: 105px;
+    height: 30px;
+    display: block;
+    bottom: -10px;
+    left: -4px;
+    -webkit-background-size: 80% auto;
+    background-size: 60% auto; }
+  .main-containter .therapist-list .info {
+    font-size: 12px; }
 
 .footer {
   border-top: 1px solid #e8e8e8;
   background-color: #fff; }
+  .footer a {
+    color: #a7a7a7; }
   .footer li {
     color: #999; }
   .footer li.active a {
@@ -175,3 +239,90 @@ a {
   min-height: 100%;
   float: left;
   border-right: 1px solid #cecece; }
+
+/**
+  login page
+ */
+.login {
+  transform: translateZ(0);
+  width: 100%;
+  height: 100%;
+  transition: transform .3s ease-in-out 0s;
+  -webkit-transform: translateZ(0);
+  -webkit-transition: -webkit-transform .3s ease-in-out 0s;
+  text-align: center;
+  color: #666;
+  font-size: 13px;
+  padding: 5% 2% 0; }
+  .login h1 {
+    margin-bottom: 2px; }
+  .login .tip {
+    margin-bottom: 1.6em; }
+  .login .agreement a {
+    text-decoration: underline; }
+  .login .copyright {
+    color: #aaa;
+    font-size: smaller; }
+  .login .form-group {
+    padding: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #e8e8e8;
+    position: relative; }
+    .login .form-group input {
+      border: 0px;
+      font-size: 13px;
+      color: #666; }
+    .login .form-group div {
+      position: absolute;
+      right: 15px;
+      top: 12px; }
+  .login button.am-btn-block {
+    margin-top: 30px; }
+  .login button.am-disabled {
+    background-color: #aaa;
+    border: none; }
+
+.am-navbar {
+  background-color: #fff; }
+
+button.am-btn-block {
+  border-radius: 5px;
+  font-weight: bold; }
+
+/**
+service detail
+ */
+.service-detail {
+  height: 100%;
+  margin-bottom: 45px; }
+  .service-detail .service-detail-content > div {
+    padding: 12px 2%;
+    border-bottom: 8px solid #e8e8e8; }
+    .service-detail .service-detail-content > div:first-child {
+      padding: 0px; }
+      .service-detail .service-detail-content > div:first-child h1 {
+        font-size: 1.2em;
+        padding: 12px 2%;
+        border-bottom: 1px solid #f1f1f1;
+        color: #545454; }
+        .service-detail .service-detail-content > div:first-child h1 .cost {
+          color: #e95738; }
+      .service-detail .service-detail-content > div:first-child p {
+        padding: 0px 2%; }
+    .service-detail .service-detail-content > div h2 {
+      color: #F4AB63;
+      border-bottom: 1px solid #f1f1f1; }
+    .service-detail .service-detail-content > div p {
+      color: #838383; }
+    .service-detail .service-detail-content > div.purpose h2 {
+      border-bottom: none;
+      margin: 0px;
+      font-size: 1.2em; }
+    .service-detail .service-detail-content > div.purpose p {
+      margin-top: 0px; }
+
+.navbar-button {
+  height: 60px;
+  padding: 0px 2%; }
+
+/*# sourceMappingURL=index.css.map */
