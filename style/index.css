@@ -326,4 +326,49 @@ modal
   .complete-modal button {
     margin: 8% 0px; }
 
+/**
+  order
+ */
+.am-list > li.border8 {
+  border-bottom: 8px solid #e8e8e8; }
+
+.service-order {
+  width: 101%; }
+  .service-order .am-list > .am-g {
+    width: 100%;
+    padding: 1% 2%; }
+    .service-order .am-list > .am-g label {
+      margin-top: 8px;
+      margin-top: 13px;
+      color: #878787;
+      border-right: 1px solid #ccc;
+      text-align: center;
+      line-height: 1em; }
+  .service-order input {
+    border: none;
+    font-size: 15px;
+    line-height: 1.6em;
+    color: #333;
+    text-align: right; }
+  .service-order input[type=text][disabled] {
+    cursor: auto;
+    background-color: #fff; }
+  .service-order .am-icon-angle-right {
+    font-size: 20px; }
+  .service-order .cost {
+    font-size: 15px; }
+    .service-order .cost .am-g {
+      padding: 1.2% 2%;
+      border-bottom: 1px dotted #eee; }
+      .service-order .cost .am-g:last-child {
+        border-bottom: none; }
+    .service-order .cost .r {
+      color: #e95738;
+      text-align: right; }
+  .service-order ul.reminder {
+    margin-left: 8%; }
+    .service-order ul.reminder li {
+      list-style: disc;
+      color: #777; }
+
 /*# sourceMappingURL=index.css.map */
