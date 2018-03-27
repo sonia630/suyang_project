@@ -306,17 +306,15 @@ service detail
   .service-detail .service-detail-content > div {
     padding: 12px 2%;
     border-bottom: 8px solid #e8e8e8; }
-    .service-detail .service-detail-content > div:first-child {
-      padding: 0px; }
-      .service-detail .service-detail-content > div:first-child h1 {
-        font-size: 1.2em;
-        padding: 12px 2%;
-        border-bottom: 1px solid #f1f1f1;
-        color: #545454; }
-        .service-detail .service-detail-content > div:first-child h1 .cost {
-          color: #e95738; }
-      .service-detail .service-detail-content > div:first-child p {
-        padding: 0px 2%; }
+    .service-detail .service-detail-content > div:first-child h1 {
+      font-size: 1.2em;
+      padding: 12px 2%;
+      border-bottom: 1px solid #f1f1f1;
+      color: #545454; }
+      .service-detail .service-detail-content > div:first-child h1 .cost {
+        color: #e95738; }
+    .service-detail .service-detail-content > div:first-child p {
+      padding: 0px 2%; }
     .service-detail .service-detail-content > div h2 {
       color: #F4AB63;
       border-bottom: 1px solid #f1f1f1; }
