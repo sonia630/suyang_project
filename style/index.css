@@ -12,6 +12,9 @@ ul, ul li {
 .am-btn-xs {
   font-size: 1em; }
 
+.am-slider-default {
+  margin-bottom: 0px; }
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 1.2em 0; }
 
