@@ -24,6 +24,9 @@ h1, h2, h3, h4, h5, h6 {
 .am-text-xs {
   font-size: 12px; }
 
+.am-text-primary {
+  color: #F4AB63; }
+
 p {
   margin-bottom: 1em; }
 
@@ -265,6 +268,8 @@ a {
   color: #666;
   font-size: 13px;
   padding: 5% 2% 0; }
+  .login .am-form {
+    padding: 0 5%; }
   .login div.title {
     width: 240px; }
   .login h1 {
