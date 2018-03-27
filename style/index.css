@@ -265,6 +265,8 @@ a {
   color: #666;
   font-size: 13px;
   padding: 5% 2% 0; }
+  .login div.title {
+    width: 240px; }
   .login h1 {
     margin-bottom: 2px; }
   .login .tip {
@@ -281,12 +283,13 @@ a {
     position: relative; }
     .login .form-group input {
       border: 0px;
-      font-size: 13px;
-      color: #666; }
+      font-size: 14px;
+      color: #666;
+      padding: 15px 10px; }
     .login .form-group div {
       position: absolute;
       right: 15px;
-      top: 12px; }
+      top: 20px; }
   .login button.am-btn-block {
     margin-top: 30px; }
   .login button.am-disabled {
