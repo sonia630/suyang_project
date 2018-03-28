@@ -22,6 +22,9 @@ button.am-btn-white {
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 1.2em 0; }
 
+h3.am-text-lg {
+  font-size: 18px; }
+
 .am-btn-lg {
   font-size: 16px; }
 
@@ -384,7 +387,7 @@ modal
 /**
   order
  */
-.am-list > li.border8 {
+.border8 {
   border-bottom: 8px solid #e8e8e8; }
 
 .service-order {
@@ -469,5 +472,45 @@ modal
       background-color: #F4AB63;
       color: #fff;
       font-weight: bold; }
+
+/**
+select-location
+ */
+.select-location {
+  margin-top: 42px; }
+  .select-location form {
+    padding: 5% 2% 5% 0px;
+    margin-bottom: 5%; }
+  .select-location .local-history {
+    padding: 5%; }
+    .select-location .local-history li div:last-child {
+      color: #999; }
+
+.select-location .am-form input[type=text] {
+  border: none;
+  border-bottom: 1px solid #e8e8e8; }
+
+/**
+select time
+ */
+.select-time {
+  margin-top: 42px;
+  margin-bottom: 80px; }
+
+.picker-calendar-week-days {
+  height: 21px;
+  font-size: 13px; }
+
+.toolbar .toolbar-inner {
+  font-size: 12px; }
+
+.picker-calendar-week-days + .picker-calendar-months {
+  height: 200px; }
+
+.weui-picker-calendar .picker-modal-inner {
+  height: 221px; }
+
+.weui-picker-calendar {
+  height: 270px; }
 
 /*# sourceMappingURL=index.css.map */
