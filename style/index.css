@@ -12,6 +12,9 @@ ul, ul li {
 .am-btn-xs {
   font-size: 1em; }
 
+button {
+  border: none; }
+
 button.am-btn-white {
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.2); }
@@ -73,9 +76,9 @@ a {
     float: left;
     font-weight: 500; }
     .topbar li.country {
-      width: 20%;
       text-align: left;
-      color: #838383; }
+      color: #838383;
+      font-size: 15px; }
       .topbar li.country i {
         margin-left: 5px; }
 
@@ -496,6 +499,8 @@ select time
 .select-time {
   margin-top: 42px;
   margin-bottom: 80px; }
+  .select-time #calendar {
+    border: 1px solid #e8e8e8; }
 
 .picker-calendar-week-days {
   height: 21px;
@@ -511,6 +516,6 @@ select time
   height: 221px; }
 
 .weui-picker-calendar {
-  height: 270px; }
+  height: 241px; }
 
 /*# sourceMappingURL=index.css.map */
