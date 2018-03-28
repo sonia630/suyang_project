@@ -12,6 +12,10 @@ ul, ul li {
 .am-btn-xs {
   font-size: 1em; }
 
+button.am-btn-white {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2); }
+
 .am-slider-default {
   margin-bottom: 0px; }
 
@@ -60,15 +64,16 @@ a {
   z-index: 999;
   background: rgba(255, 255, 255, 0.8);
   border-bottom: 1px solid #e8e8e8; }
+  .topbar i {
+    color: #838383; }
   .topbar li {
     float: left;
     font-weight: 500; }
-    .topbar li:first-child {
+    .topbar li.country {
       width: 20%;
       text-align: left;
-      color: #838383;
-      margin-right: 15%; }
-      .topbar li:first-child i {
+      color: #838383; }
+      .topbar li.country i {
         margin-left: 5px; }
 
 .main-containter {
@@ -91,10 +96,7 @@ a {
       top: 0px;
       height: 37px;
     }
-  }*/
- /***
- therapist list
-*/ }
+  }*/ }
   .main-containter .am-slider-default .am-control-nav {
     bottom: 10px; }
   .main-containter .am-slider-default .am-control-nav li a.am-active {
@@ -123,79 +125,6 @@ a {
       margin: auto;
       line-height: 40px;
       font-size: 18px; }
-  .main-containter .list-header {
-    font-size: 14px;
-    font-weight: bold; }
-    .main-containter .list-header ul {
-      width: 100%;
-      float: left; }
-      .main-containter .list-header ul li {
-        float: left;
-        width: 15%;
-        padding: 10px 0px;
-        color: #666; }
-        .main-containter .list-header ul li:nth-of-type(3), .main-containter .list-header ul li:nth-of-type(4) {
-          width: 21%; }
-        .main-containter .list-header ul li:nth-of-type(5) {
-          width: 28%; }
-        .main-containter .list-header ul li.active {
-          border-bottom: 1px solid #F4AB63;
-          color: #F4AB63; }
-        .main-containter .list-header ul li span {
-          border-right: 1px solid #e8e8e8;
-          display: block;
-          margin: 0px 5%;
-          float: left;
-          width: 100%;
-          text-align: center;
-          padding: 0px;
-          line-height: 1em; }
-        .main-containter .list-header ul li:last-child span {
-          border-right: none; }
-    .main-containter .list-header > div {
-      clear: both; }
-  .main-containter .list-search {
-    background-color: #f3f3f3;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 5px 10px;
-    float: left;
-    width: 100%;
-    border-top: 1px solid #e8e8e8;
-    border-bottom: 1px solid #e8e8e8;
-    color: #666; }
-    .main-containter .list-search i {
-      margin-left: 5px; }
-  .main-containter .am-list .am-u-sm-3 {
-    padding-left: 10px; }
-  .main-containter .am-list > li {
-    padding: 10px 0px;
-    border: 1px solid #f1f1f1;
-    border-right: none;
-    border-left: none; }
-  .main-containter .list-content {
-    font-size: 12px; }
-    .main-containter .list-content h3 {
-      margin: 0px;
-      font-size: 15px; }
-    .main-containter .list-content i {
-      font-size: 12px;
-      margin: 0 3px 0 10px;
-      color: #999; }
-    .main-containter .list-content span {
-      font-size: 10px;
-      color: #999; }
-    .main-containter .list-content button {
-      font-weight: bold; }
-    .main-containter .list-content .am-fr {
-      text-align: right; }
-      .main-containter .list-content .am-fr p {
-        color: #878787;
-        line-height: 3em; }
-    .main-containter .list-content .info {
-      clear: both;
-      color: #666;
-      font-size: 13px; }
   .main-containter .service-list .cost {
     line-height: 2.5em; }
     .main-containter .service-list .cost span:first-child {
@@ -206,17 +135,110 @@ a {
       font-size: 16px; }
   .main-containter .service-list p {
     margin: 0px; }
-  .main-containter .therapist-list .list-search {
+
+.am-list .am-u-sm-3 {
+  padding-left: 10px; }
+.am-list > li {
+  padding: 10px 0px;
+  border: 1px solid #f1f1f1;
+  border-right: none;
+  border-left: none; }
+
+.list-content {
+  font-size: 12px; }
+  .list-content h3 {
+    margin: 0px;
+    font-size: 15px; }
+  .list-content i {
+    font-size: 12px;
+    margin: 0 3px 0 10px;
+    color: #999; }
+  .list-content span {
+    font-size: 10px;
+    color: #999; }
+  .list-content button {
+    font-weight: bold; }
+  .list-content .am-fr {
+    text-align: right; }
+    .list-content .am-fr p {
+      color: #878787;
+      line-height: 3em; }
+  .list-content .info {
+    clear: both;
+    color: #666;
+    font-size: 13px; }
+
+.list-search {
+  background-color: #f3f3f3;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px 10px;
+  float: left;
+  width: 100%;
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+  color: #666; }
+  .list-search i {
+    margin-left: 5px; }
+
+.list-header {
+  font-size: 14px;
+  font-weight: bold; }
+  .list-header ul {
+    width: 100%;
+    float: left; }
+    .list-header ul li {
+      float: left;
+      width: 15%;
+      padding: 10px 0px;
+      color: #666; }
+      .list-header ul li:nth-of-type(3), .list-header ul li:nth-of-type(4) {
+        width: 21%; }
+      .list-header ul li:nth-of-type(5) {
+        width: 28%; }
+      .list-header ul li.active {
+        border-bottom: 1px solid #F4AB63;
+        color: #F4AB63; }
+      .list-header ul li span {
+        border-right: 1px solid #e8e8e8;
+        display: block;
+        margin: 0px 5%;
+        float: left;
+        width: 100%;
+        text-align: center;
+        padding: 0px;
+        line-height: 1em; }
+      .list-header ul li:last-child span {
+        border-right: none; }
+  .list-header > div {
+    clear: both; }
+
+.topbar-therapist {
+  height: 76px; }
+  .topbar-therapist .list-header {
+    border-top: 1px solid #e8e8e8;
+    margin: 0 -10px 10px;
+    border-bottom: 8px solid #e8e8e8;
+    height: 42px;
+    background: #fff; }
+
+/***
+ therapist list
+*/
+.therapist-list {
+  clear: both;
+  margin-bottom: 45px;
+  margin-top: 84px; }
+  .therapist-list .list-search {
     font-size: 14px;
     font-weight: bold;
     padding: 5px 10px;
     float: left;
     width: 100%;
-    border-top: 8px solid #e8e8e8;
     color: #666;
     background-color: #fff;
     border-bottom: none; }
-  .main-containter .therapist-list .excellent {
+  .therapist-list .excellent {
     background: url(../images/excellent.png) no-repeat center;
     position: absolute;
     width: 105px;
@@ -226,8 +248,15 @@ a {
     left: -4px;
     -webkit-background-size: 80% auto;
     background-size: 60% auto; }
-  .main-containter .therapist-list .info {
-    font-size: 12px; }
+  .therapist-list .info {
+    font-size: 12px;
+    clear: both; }
+
+/**
+choose therapist
+ */
+.choosetherapist {
+  margin-top: 42px; }
 
 .footer {
   border-top: 1px solid #e8e8e8;
@@ -313,7 +342,8 @@ service detail
  */
 .service-detail {
   height: 100%;
-  margin-bottom: 45px; }
+  margin-bottom: 45px;
+  margin-top: 42px; }
   .service-detail .service-detail-content > div {
     padding: 12px 2%;
     border-bottom: 8px solid #e8e8e8; }
@@ -349,7 +379,7 @@ modal
 .complete-modal {
   margin: 12% 5%; }
   .complete-modal button {
-    margin: 8% 0px; }
+    margin: 8% 0px 2%; }
 
 /**
   order
@@ -357,57 +387,87 @@ modal
 .am-list > li.border8 {
   border-bottom: 8px solid #e8e8e8; }
 
-.service-order .am-list > .am-g {
-  width: 100%;
-  padding: 1% 2%; }
-  .service-order .am-list > .am-g label {
-    margin-top: 13px;
-    color: #878787;
-    border-right: 1px solid #ccc;
-    text-align: center;
-    line-height: 1em; }
-  .service-order .am-list > .am-g .numberStep {
-    margin-top: 3px; }
-    .service-order .am-list > .am-g .numberStep i {
-      color: #fff;
-      font-size: 16px; }
-    .service-order .am-list > .am-g .numberStep button {
-      position: relative;
-      padding: 13px 10px 13px 19px;
-      border-radius: 5px; }
-    .service-order .am-list > .am-g .numberStep input {
-      width: 30px;
+.service-order {
+  margin-bottom: 80px;
+  margin-top: 42px; }
+  .service-order .am-list > .am-g {
+    width: 100%;
+    padding: 1% 2%; }
+    .service-order .am-list > .am-g label {
+      margin-top: 13px;
+      color: #878787;
+      border-right: 1px solid #ccc;
       text-align: center;
-      border: 1px solid #ccc; }
-.service-order input {
-  border: none;
-  font-size: 15px;
-  line-height: 1.6em;
-  color: #333;
-  text-align: right; }
-.service-order input[type=text][disabled] {
-  cursor: auto;
-  background-color: #fff; }
-.service-order .am-icon-angle-right {
-  font-size: 20px; }
-.service-order .cost {
-  font-size: 15px; }
-  .service-order .cost .am-g {
-    padding: 1.2% 2%;
-    border-bottom: 1px dotted #eee; }
-    .service-order .cost .am-g:last-child {
-      border-bottom: none; }
-  .service-order .cost .r {
-    color: #e95738;
+      line-height: 1em; }
+    .service-order .am-list > .am-g .numberStep {
+      margin-top: 3px; }
+      .service-order .am-list > .am-g .numberStep i {
+        color: #fff;
+        font-size: 16px; }
+      .service-order .am-list > .am-g .numberStep button {
+        position: relative;
+        padding: 13px 10px 13px 19px;
+        border-radius: 5px; }
+      .service-order .am-list > .am-g .numberStep input {
+        width: 30px;
+        text-align: center;
+        border: 1px solid #ccc; }
+  .service-order input {
+    border: none;
+    font-size: 15px;
+    line-height: 1.6em;
+    color: #333;
     text-align: right; }
-.service-order ul.reminder {
-  margin-left: 8%; }
-  .service-order ul.reminder li {
-    list-style: disc;
-    color: #777; }
+  .service-order input[type=text][disabled] {
+    cursor: auto;
+    background-color: #fff; }
+  .service-order .am-icon-angle-right {
+    font-size: 20px; }
+  .service-order .cost {
+    font-size: 15px; }
+    .service-order .cost .am-g {
+      padding: 1.2% 2%;
+      border-bottom: 1px dotted #eee; }
+      .service-order .cost .am-g:last-child {
+        border-bottom: none; }
+    .service-order .cost .r {
+      color: #e95738;
+      text-align: right; }
+  .service-order ul.reminder {
+    margin-left: 8%; }
+    .service-order ul.reminder li {
+      list-style: disc;
+      color: #777; }
 
 .cost {
   font-size: 18px;
   color: #e95738; }
+
+/**
+ select city
+ */
+.select-city {
+  padding: 5%; }
+  .select-city label:last-of-type {
+    margin-top: 5%; }
+  .select-city > div {
+    border: 1px solid #e8e8e8;
+    padding: 2%;
+    background-color: #ffffff; }
+    .select-city > div i {
+      margin-left: 3%; }
+  .select-city div.citys button {
+    margin: 5%;
+    width: 15%;
+    margin: 2%;
+    width: 28%;
+    border: none;
+    background-color: #f1f1f1;
+    color: #585858;
+    font-weight: 400; }
+    .select-city div.citys button.active {
+      background-color: #F4AB63;
+      color: #fff;
+      font-weight: bold; }
 
 /*# sourceMappingURL=index.css.map */
