@@ -480,6 +480,8 @@ modal
  select city
  */
 .select-city {
+  margin-top: 42px;
+  margin-bottom: 80px;
   padding: 5%; }
   .select-city label:last-of-type {
     margin-top: 5%; }
