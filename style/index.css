@@ -12,8 +12,14 @@ ul, ul li {
   padding: 0px;
   margin: 0px; }
 
-.am-btn-xs {
-  font-size: 1em; }
+.am-text-cost {
+  color: #e95738; }
+
+.am-btn-xs, .am-btn-group-xs .am-btn {
+  font-size: 12px; }
+
+.am-btn-group-sm .am-btn, .am-btn-sm, input, textarea, .am-form-field {
+  font-size: 13px; }
 
 button {
   border: none; }
@@ -417,7 +423,7 @@ modal
 /**
   order
  */
-.border8 {
+.border8, .am-list > li.border8 {
   border-bottom: 8px solid #e8e8e8; }
 
 .service-order {
@@ -473,7 +479,7 @@ modal
       color: #777; }
 
 .cost {
-  font-size: 18px;
+  font-size: 15px;
   color: #e95738; }
 
 /**
@@ -576,5 +582,35 @@ mine
       font-size: 16px; }
     .evaluate .am-form .start-group i.active {
       color: #F4AB63; }
+
+/**
+order-detail
+ */
+.order-detail {
+  margin-top: 42px;
+  margin-bottom: 50px;
+  padding: 5%; }
+  .order-detail .am-icon-circle {
+    font-size: 8px;
+    vertical-align: middle;
+    margin-top: -2px;
+    margin-left: 1em;
+    margin-right: 5px; }
+  .order-detail .text-lg {
+    font-size: 16px; }
+  .order-detail .am-btn-group-xs {
+    margin-top: 10%; }
+    .order-detail .am-btn-group-xs button {
+      margin-right: 2%;
+      font-weight: bold; }
+    .order-detail .am-btn-group-xs button:last-child {
+      margint-right: 0px; }
+  .order-detail .am-btn-group-sm {
+    margin-top: 10%; }
+    .order-detail .am-btn-group-sm button {
+      margin-right: 15%;
+      font-weight: bold; }
+    .order-detail .am-btn-group-sm button:last-child {
+      margint-right: 0px; }
 
 /*# sourceMappingURL=index.css.map */
