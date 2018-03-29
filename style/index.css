@@ -432,6 +432,8 @@ modal
   .service-order .am-list > .am-g {
     width: 100%;
     padding: 1% 2%; }
+    .service-order .am-list > .am-g a {
+      color: #333; }
     .service-order .am-list > .am-g label {
       margin-top: 13px;
       color: #878787;
@@ -514,31 +516,26 @@ modal
 /**
 select-location
  */
-.select-location {
-  margin-top: 42px; }
-  .select-location form {
-    padding: 5% 2% 5% 0px;
-    margin-bottom: 5%; }
-  .select-location .local-history {
-    padding: 5%; }
-    .select-location .local-history li div:last-child {
-      color: #999; }
+.select-location form {
+  padding: 5% 2% 5% 0px;
+  margin-bottom: 5%; }
+.select-location .local-history {
+  padding: 5%; }
+  .select-location .local-history li div:last-child {
+    color: #999; }
 
 /**
 select time
  */
-.select-time {
-  margin-top: 42px;
-  margin-bottom: 80px; }
-  .select-time #calendar {
-    border: 1px solid #e8e8e8; }
-  .select-time .time span {
-    padding: 0.5% 2%;
-    margin: 0px 2%;
-    display: inline-block; }
-    .select-time .time span.active {
-      background-color: #F4AB63;
-      color: #fff; }
+.select-time #calendar {
+  border: 1px solid #e8e8e8; }
+.select-time .time span {
+  padding: 0.5% 2%;
+  margin: 0px 2%;
+  display: inline-block; }
+  .select-time .time span.active {
+    background-color: #F4AB63;
+    color: #fff; }
 
 .time-result span {
   margin-right: 6px;
@@ -612,5 +609,56 @@ order-detail
       font-weight: bold; }
     .order-detail .am-btn-group-sm button:last-child {
       margint-right: 0px; }
+
+/**
+select-serviced-user
+ */
+.select-serviced-user {
+  margin-top: 42px;
+  margin-bottom: 50px;
+  padding: 5%; }
+  .select-serviced-user div.top {
+    width: 100%;
+    line-height: 2em; }
+    .select-serviced-user div.top button {
+      font-weight: bold; }
+  .select-serviced-user .userlist {
+    font-size: 13px;
+    line-height: 2em; }
+    .select-serviced-user .userlist .user {
+      border-radius: 5px;
+      border: 1px solid #e8e8e8;
+      padding: 3% 0px;
+      width: 49%;
+      float: left;
+      margin-bottom: 2%; }
+      .select-serviced-user .userlist .user .name {
+        font-size: 16px;
+        font-weight: bold; }
+    .select-serviced-user .userlist .user:nth-of-type(2n) {
+      margin-left: 2%; }
+
+/**
+add-user
+ */
+.add-user input {
+  text-align: left; }
+.add-user .am-list > .am-g .radios {
+  padding-left: 15px; }
+  .add-user .am-list > .am-g .radios label {
+    border: 0px;
+    margin-right: 10%; }
+
+/**
+add-symptom
+ */
+.add-symptom {
+  margin-top: 42px;
+  margin-bottom: 50px;
+  padding: 5%; }
+
+.sliderMargin {
+  margin-top: 42px;
+  margin-bottom: 80px; }
 
 /*# sourceMappingURL=index.css.map */
