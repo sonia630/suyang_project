@@ -527,19 +527,25 @@ select-location
 /**
 select time
  */
-.select-time #calendar {
-  border: 1px solid #e8e8e8; }
+.select-time .picker-calendar-day {
+  font-size: 13px; }
 .select-time .time span {
   padding: 0.5% 2%;
-  margin: 0px 2%;
+  margin: 0px 1%;
+  font-size: 13px;
   display: inline-block; }
   .select-time .time span.active {
     background-color: #F4AB63;
     color: #fff; }
 
-.time-result span {
-  margin-right: 6px;
-  display: inline-block; }
+.time-result {
+  border: 1px solid #e8e8e8;
+  line-height: 35px;
+  border-radius: 5px;
+  margin-left: 5px; }
+  .time-result span {
+    margin-right: 6px;
+    display: inline-block; }
 
 .picker-calendar-day.picker-calendar-day-selected span {
   background-color: #F4AB63; }
@@ -658,7 +664,6 @@ add-symptom
   padding: 5%; }
 
 .sliderMargin {
-  margin-top: 42px;
-  margin-bottom: 80px; }
+  margin-top: 42px; }
 
 /*# sourceMappingURL=index.css.map */
