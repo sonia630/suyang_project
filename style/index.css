@@ -80,7 +80,9 @@ a {
   font-size: 13px; }
 
 .toolbar .toolbar-inner {
-  font-size: 12px; }
+  font-size: 15px;
+  padding: 10px 0px;
+  height: 2.8em; }
 
 .picker-calendar-week-days + .picker-calendar-months {
   height: 200px; }
@@ -269,7 +271,7 @@ a {
     float: left; }
     .list-order-header ul li {
       float: left;
-      width: 20%;
+      width: 23%;
       padding: 10px 0px;
       color: #666; }
       .list-order-header ul li.active {
@@ -288,6 +290,9 @@ a {
         border-right: none; }
   .list-order-header > div {
     clear: both; }
+
+.receive-order-header ul li {
+  width: 20%; }
 
 .topbar-therapist {
   height: 76px; }
@@ -593,6 +598,10 @@ select-location
 /**
 select time
  */
+i.icon.icon-next, i.icon.icon-prev {
+  width: 0.9em;
+  height: 0.9em; }
+
 .select-time .picker-calendar-day {
   font-size: 13px; }
 .select-time .time span {
@@ -662,6 +671,11 @@ order-detail
   margin-top: 42px;
   margin-bottom: 50px;
   padding: 5%; }
+  .order-detail .am-u-sm-3 {
+    min-width: 65px;
+    padding: 0px; }
+  .order-detail .am-u-sm-9 {
+    padding-left: 5px; }
   .order-detail .am-icon-circle {
     font-size: 8px;
     vertical-align: middle;
@@ -675,8 +689,9 @@ order-detail
     margin-left: -10px;
     margin-right: -10px; }
     .order-detail .am-btn-group-xs button {
-      margin-right: 2%;
-      font-weight: bold; }
+      margin-right: 1%;
+      font-weight: bold;
+      margin-bottom: 10px; }
     .order-detail .am-btn-group-xs button:last-child {
       margint-right: 0px; }
   .order-detail .am-btn-group-sm {
@@ -746,22 +761,46 @@ my-message
   .my-message .am-comment .am-comment-avatar {
     border: 1px solid #e8e8e8; }
 
+/***
+my-receive-orders
+ */
+.my-receive-orders {
+  margin-top: 84px;
+  margin-bottom: 50px; }
+  .my-receive-orders > ul.am-list > li > div {
+    padding: 2px 2%; }
+  .my-receive-orders > ul.am-list > li i {
+    margin-right: 5px; }
+  .my-receive-orders > ul.am-list > li .address {
+    color: #999;
+    font-size: 13px;
+    line-height: 3em;
+    border-top: 1px dotted #cccccc;
+    clear: both; }
+
 /**
 my-orders
  */
 .my-orders {
   margin-top: 84px;
   margin-bottom: 50px; }
-  .my-orders li {
-    padding: 5%; }
-    .my-orders li i {
-      margin-right: 5px; }
-    .my-orders li .address {
-      color: #999;
-      font-size: 13px;
-      text-indent: 3px;
-      line-height: 3em;
-      border-top: 1px dotted #cccccc;
-      clear: both; }
+  .my-orders > ul.am-list > li {
+    padding: 0px 2%; }
+    .my-orders > ul.am-list > li button {
+      font-weight: bold; }
+    .my-orders > ul.am-list > li .top {
+      padding: 1% 0px; }
+    .my-orders > ul.am-list > li .content {
+      padding: 2% 0px;
+      border-top: 1px solid #e8e8e8;
+      border-bottom: 1px solid #e8e8e8; }
+      .my-orders > ul.am-list > li .content .am-fl {
+        margin-left: 10px; }
+        .my-orders > ul.am-list > li .content .am-fl div {
+          line-height: 16px; }
+          .my-orders > ul.am-list > li .content .am-fl div:first-child {
+            margin-top: 10px; }
+    .my-orders > ul.am-list > li .bottom {
+      padding: 1% 0px; }
 
 /*# sourceMappingURL=index.css.map */
