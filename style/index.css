@@ -21,6 +21,9 @@ ul, ul li {
 .am-btn-group-sm .am-btn, .am-btn-sm, input, textarea, .am-form-field {
   font-size: 13px; }
 
+.am-margin-left-sm {
+  margin-left: 8px; }
+
 button {
   border: none; }
 
@@ -98,11 +101,14 @@ a {
   width: 100%;
   height: 42px;
   line-height: 42px;
-  padding: 0 10px;
   font-size: 16px;
   z-index: 999;
   background: rgba(255, 255, 255, 0.8);
   border-bottom: 1px solid #e8e8e8; }
+  .topbar .am-u-sm-1:first-child {
+    padding-left: 12px; }
+  .topbar .am-u-sm-10 {
+    width: 78%; }
   .topbar i {
     color: #838383; }
   .topbar li {
@@ -175,8 +181,6 @@ a {
   .main-containter .service-list p {
     margin: 0px; }
 
-.am-list .am-u-sm-3 {
-  padding-left: 10px; }
 .am-list > li {
   padding: 10px 0px;
   border: 1px solid #f1f1f1;
@@ -252,6 +256,39 @@ a {
   .list-header > div {
     clear: both; }
 
+.list-order-header {
+  border-top: 1px solid #e8e8e8;
+  margin: 0 -10px 10px;
+  border-bottom: 8px solid #e8e8e8;
+  height: 42px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: bold; }
+  .list-order-header ul {
+    width: 100%;
+    float: left; }
+    .list-order-header ul li {
+      float: left;
+      width: 20%;
+      padding: 10px 0px;
+      color: #666; }
+      .list-order-header ul li.active {
+        border-bottom: 1px solid #F4AB63;
+        color: #F4AB63; }
+      .list-order-header ul li span {
+        border-right: 1px solid #e8e8e8;
+        display: block;
+        margin: 0px 5%;
+        float: left;
+        width: 100%;
+        text-align: center;
+        padding: 0px;
+        line-height: 1em; }
+      .list-order-header ul li:last-child span {
+        border-right: none; }
+  .list-order-header > div {
+    clear: both; }
+
 .topbar-therapist {
   height: 76px; }
   .topbar-therapist .list-header {
@@ -294,8 +331,23 @@ a {
 /**
 choose therapist
  */
-.choosetherapist {
+.select-therapist {
   margin-top: 42px; }
+  .select-therapist .am-list .am-u-sm-3 {
+    width: 80px;
+    padding: 0px 0px 0px 8px; }
+  .select-therapist .am-list .am-u-sm-9 {
+    padding-left: 10px;
+    float: left;
+    width: calc(100% - 80px); }
+  .select-therapist .am-list h2 {
+    margin-top: 25px; }
+  .select-therapist .list-content .info span {
+    font-size: 12px;
+    line-height: 2em;
+    width: 30%;
+    min-width: 65px;
+    display: inline-block; }
 
 .footer {
   border-top: 1px solid #e8e8e8;
@@ -431,7 +483,13 @@ modal
   margin-top: 42px; }
   .service-order .am-list > .am-g {
     width: 100%;
-    padding: 1% 2%; }
+    padding: 1%; }
+    .service-order .am-list > .am-g .am-u-sm-9 {
+      padding-right: 0px; }
+    .service-order .am-list > .am-g .am-u-sm-3 {
+      padding-left: 0px;
+      padding-right: 0px;
+      width: 68px; }
     .service-order .am-list > .am-g a {
       color: #333; }
     .service-order .am-list > .am-g label {
@@ -449,6 +507,8 @@ modal
         position: relative;
         padding: 13px 10px 13px 19px;
         border-radius: 5px; }
+        .service-order .am-list > .am-g .numberStep button:last-child {
+          margin-right: 10px; }
       .service-order .am-list > .am-g .numberStep input {
         width: 30px;
         text-align: center;
@@ -465,7 +525,7 @@ modal
   .service-order .am-icon-angle-right {
     font-size: 20px; }
   .service-order .cost {
-    font-size: 15px; }
+    font-size: 14px; }
     .service-order .cost .am-g {
       padding: 1.2% 2%;
       border-bottom: 1px dotted #eee; }
@@ -481,8 +541,11 @@ modal
       color: #777; }
 
 .cost {
-  font-size: 15px;
+  font-size: 14px;
   color: #e95738; }
+
+.am-panel-default > .am-panel-hd {
+  padding-left: 5px; }
 
 /**
  select city
@@ -517,8 +580,11 @@ modal
 select-location
  */
 .select-location form {
-  padding: 5% 2% 5% 0px;
+  padding: 10% 2% 5% 0px;
   margin-bottom: 5%; }
+  .select-location form .am-u-sm-3 {
+    padding-left: 5px;
+    min-width: 73px; }
 .select-location .local-history {
   padding: 5%; }
   .select-location .local-history li div:last-child {
@@ -530,7 +596,7 @@ select time
 .select-time .picker-calendar-day {
   font-size: 13px; }
 .select-time .time span {
-  padding: 0.5% 2%;
+  padding: 2%;
   margin: 0px 1%;
   font-size: 13px;
   display: inline-block; }
@@ -553,6 +619,9 @@ select time
 /***
 mine
  */
+.mine .am-list > .am-g .am-u-sm-3 {
+  text-align: right;
+  padding-right: 5px; }
 .mine .am-list > .am-g label.user {
   margin-top: 30px; }
 
@@ -665,5 +734,32 @@ add-symptom
 
 .sliderMargin {
   margin-top: 42px; }
+
+/**
+my-message
+ */
+.my-message {
+  margin-top: 42px;
+  padding: 2px 5%; }
+  .my-message .am-comment .am-comment-avatar {
+    border: 1px solid #e8e8e8; }
+
+/**
+my-orders
+ */
+.my-orders {
+  margin-top: 84px;
+  margin-bottom: 50px; }
+  .my-orders li {
+    padding: 5%; }
+    .my-orders li i {
+      margin-right: 5px; }
+    .my-orders li .address {
+      color: #999;
+      font-size: 13px;
+      text-indent: 3px;
+      line-height: 3em;
+      border-top: 1px dotted #cccccc;
+      clear: both; }
 
 /*# sourceMappingURL=index.css.map */
