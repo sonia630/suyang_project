@@ -188,6 +188,15 @@ a {
   border: 1px solid #f1f1f1;
   border-right: none;
   border-left: none; }
+  .am-list > li > .am-fl:first-child {
+    margin-left: 10px;
+    width: 80px; }
+  .am-list > li > .am-fl:last-child {
+    width: calc(100% - 110px);
+    margin-left: 5px; }
+  .am-list > li .excellent {
+    position: absolute;
+    top: 60px; }
 
 .list-content {
   font-size: 12px; }
