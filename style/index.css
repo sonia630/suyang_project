@@ -671,7 +671,9 @@ order-detail
   .order-detail .text-lg {
     font-size: 16px; }
   .order-detail .am-btn-group-xs {
-    margin-top: 10%; }
+    margin-top: 10%;
+    margin-left: -10px;
+    margin-right: -10px; }
     .order-detail .am-btn-group-xs button {
       margin-right: 2%;
       font-weight: bold; }
