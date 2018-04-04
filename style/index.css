@@ -900,4 +900,8 @@ therapist-register
       font-size: 12px;
       color: #999; }
 
+.slideBarLeft {
+  margin: 0px;
+  overflow: hidden; }
+
 /*# sourceMappingURL=index.css.map */
