@@ -50,7 +50,8 @@ h3.am-text-lg {
   color: #F4AB63; }
 
 p {
-  margin-bottom: 1em; }
+  margin-bottom: 0.8em;
+  margin-top: 0.8em; }
 
 .am-btn-sm, .am-form-group-sm .am-checkbox, .am-form-group-sm .am-form-field, .am-form-group-sm .am-form-label, .am-form-group-sm .am-radio {
   font-size: 14px !important;
@@ -452,10 +453,15 @@ service detail
   .service-detail .service-detail-content > div {
     padding: 12px 2%;
     border-bottom: 8px solid #e8e8e8; }
+    .service-detail .service-detail-content > div:first-child .am-fr {
+      margin-top: 7px;
+      font-size: 13px; }
+      .service-detail .service-detail-content > div:first-child .am-fr span {
+        margin-right: 10px; }
     .service-detail .service-detail-content > div:first-child h1 {
       font-size: 1.2em;
-      padding: 12px 2%;
-      border-bottom: 1px solid #f1f1f1;
+      line-height: 2em;
+      margin-bottom: 0px;
       color: #545454; }
       .service-detail .service-detail-content > div:first-child h1 .cost {
         color: #e95738; }
@@ -565,10 +571,10 @@ modal
  select city
  */
 .select-city {
-  margin-top: 42px;
+  margin-top: 25px;
   margin-bottom: 80px;
-  padding: 5%; }
-  .select-city label:last-of-type {
+  padding: 10px; }
+  .select-city label {
     margin-top: 5%; }
   .select-city > div {
     border: 1px solid #e8e8e8;
@@ -589,6 +595,11 @@ modal
       background-color: #F4AB63;
       color: #fff;
       font-weight: bold; }
+  .select-city .orderCity {
+    border-left: 1px solid #e8e8e8;
+    border-right: 1px solid #e8e8e8; }
+    .select-city .orderCity li {
+      text-indent: 1em; }
 
 /**
 select-location
@@ -811,5 +822,80 @@ my-orders
             margin-top: 10px; }
     .my-orders > ul.am-list > li .bottom {
       padding: 1% 0px; }
+
+/**
+therapist-story
+ */
+.therapist-story .ok_button {
+  padding: 5% 10%; }
+.therapist-story .badge span {
+  border-radius: 5px;
+  font-size: 11px;
+  padding: 2px 5px;
+  margin: 3px 2px;
+  display: inline-block; }
+  .therapist-story .badge span:nth-of-type(2n+1) {
+    border: 1px dotted #F4AB63;
+    color: #F4AB63; }
+  .therapist-story .badge span:nth-of-type(2n) {
+    border: 1px dotted #e95738;
+    color: #e95738; }
+  .therapist-story .badge span:nth-of-type(3n) {
+    border: 1px dotted #0a628f;
+    color: #0a628f; }
+  .therapist-story .badge span:nth-of-type(4n) {
+    border: 1px dotted #0BB20C;
+    color: #0BB20C; }
+  .therapist-story .badge span:nth-of-type(5n) {
+    border: 1px dotted #555555;
+    color: #555555; }
+.therapist-story .detail {
+  font-size: 13px;
+  text-indent: 1em; }
+.therapist-story .more i {
+  color: #999; }
+.therapist-story .article p {
+  text-indent: 1em; }
+.therapist-story .am-tab-panel h2 {
+  font-size: 16px; }
+.therapist-story .am-tab-panel image {
+  margin-bottom: 10px; }
+
+.am-tabs-nav li a {
+  color: #333; }
+.am-tabs-nav li.am-active a {
+  color: #F4AB63;
+  font-weight: bold; }
+
+.am-nav-tabs > li.am-active > a, .am-nav-tabs > li.am-active > a:focus, .am-nav-tabs > li.am-active > a:hover {
+  color: #F4AB63;
+  font-weight: bold; }
+
+/**
+therapist-register
+ */
+.therapist-register {
+  margin-top: 42px;
+  margin-bottom: 80px; }
+  .therapist-register .avatar {
+    padding: 2%; }
+  .therapist-register form .am-u-sm-3 {
+    padding: 0px;
+    padding-right: 10px;
+    text-align: right;
+    line-height: 2em; }
+  .therapist-register form .am-u-sm-9 {
+    padding-left: 0px; }
+    .therapist-register form .am-u-sm-9 input {
+      border-radius: 5px; }
+  .therapist-register form .file-list {
+    margin: 5%; }
+    .therapist-register form .file-list li {
+      border: 1px solid #ccc;
+      padding: 2px 2%;
+      border-radius: 5px;
+      margin-bottom: 5px;
+      font-size: 12px;
+      color: #999; }
 
 /*# sourceMappingURL=index.css.map */
