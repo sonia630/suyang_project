@@ -721,6 +721,8 @@ order-detail
       font-weight: bold; }
     .order-detail .am-btn-group-sm button:last-child {
       margint-right: 0px; }
+  .order-detail .am-list > li > .am-fl:first-child {
+    width: 72px; }
 
 /**
 select-serviced-user
