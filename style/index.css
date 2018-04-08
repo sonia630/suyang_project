@@ -438,6 +438,8 @@ choose therapist
 
 .am-navbar {
   background-color: #fff; }
+  .am-navbar .am-margin-top-sm {
+    margin-top: 10px; }
 
 button.am-btn-block {
   border-radius: 5px;
@@ -903,5 +905,81 @@ therapist-register
 .slideBarLeft {
   margin: 0px;
   overflow: hidden; }
+
+/**
+therapist-detail
+ */
+.therapist-detail {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 3%;
+  border: 1px solid #e8e8e8;
+  margin-right: 3%; }
+  .therapist-detail .people {
+    padding-top: 3%; }
+  .therapist-detail .info {
+    border-top: 1px solid #e8e8e8;
+    font-size: 13px;
+    margin: 10px 0px;
+    text-indent: 1em;
+    padding: 10px;
+    color: #666; }
+  .therapist-detail .comment-header {
+    font-size: 13px;
+    border-top: 1px solid #e8e8e8;
+    padding: 10px 5px; }
+  .therapist-detail .story {
+    border-top: 1px solid #e8e8e8;
+    padding: 10px; }
+    .therapist-detail .story .am-u-sm-6 {
+      text-align: center;
+      border-right: 1px solid #e8e8e8; }
+      .therapist-detail .story .am-u-sm-6:last-of-type {
+        border-right: none; }
+    .therapist-detail .story a {
+      color: #333; }
+    .therapist-detail .story span {
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      color: #fff;
+      text-align: center;
+      display: inline-block;
+      margin: auto;
+      line-height: 35px;
+      font-size: 18px; }
+  .therapist-detail .list-header li {
+    width: 25%; }
+  .therapist-detail .am-comments-list {
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 8px solid #e8e8e8; }
+    .therapist-detail .am-comments-list .am-comment {
+      border-bottom: 1px solid #e8e8e8;
+      margin-top: 0px; }
+      .therapist-detail .am-comments-list .am-comment .am-comment-meta {
+        padding: 5px 15px;
+        line-height: 2em; }
+      .therapist-detail .am-comments-list .am-comment:last-of-type {
+        border-bottom: none; }
+
+.border-top {
+  border-top: 1px solid #e8e8e8; }
+
+.border-bottom {
+  border-bottom: 1px solid #e8e8e8; }
+
+.am-icon-star {
+  color: #999; }
+  .am-icon-star.active {
+    color: #F4AB63; }
+
+.am-text-gray {
+  color: #999; }
+
+.am-text-orange {
+  color: #e95738; }
+
+.more .am-icon-chevron-down {
+  color: #999; }
 
 /*# sourceMappingURL=index.css.map */
