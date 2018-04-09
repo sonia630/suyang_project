@@ -72,6 +72,14 @@ a {
   a:hover {
     color: #e95738; }
 
+.am-panel {
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+
 .select-location .am-form input[type=text] {
   border: none;
   border-bottom: 1px solid #e8e8e8; }
@@ -628,12 +636,19 @@ i.icon.icon-next, i.icon.icon-prev {
   font-size: 13px; }
 .select-time .time span {
   padding: 2%;
-  margin: 0px 1%;
+  margin: 0px 0.5%;
   font-size: 13px;
   display: inline-block; }
   .select-time .time span.active {
     background-color: #F4AB63;
     color: #fff; }
+
+.time-weekly i.icon.icon-next, .time-weekly i.icon.icon-prev {
+  margin-bottom: 7px; }
+.time-weekly .picker-calendar-row {
+  margin-top: 10px; }
+.time-weekly .picker-calendar-row:after {
+  background-color: #ffffff; }
 
 .time-result {
   border: 1px solid #e8e8e8;
