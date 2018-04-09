@@ -791,6 +791,8 @@ my-receive-orders
 .my-receive-orders {
   margin-top: 84px;
   margin-bottom: 50px; }
+  .my-receive-orders > ul.am-list > li .am-fl:first-child {
+    min-width: 200px; }
   .my-receive-orders > ul.am-list > li > div {
     padding: 2px 2%; }
   .my-receive-orders > ul.am-list > li i {
@@ -832,27 +834,6 @@ therapist-story
  */
 .therapist-story .ok_button {
   padding: 5% 10%; }
-.therapist-story .badge span {
-  border-radius: 5px;
-  font-size: 11px;
-  padding: 2px 5px;
-  margin: 3px 2px;
-  display: inline-block; }
-  .therapist-story .badge span:nth-of-type(2n+1) {
-    border: 1px dotted #F4AB63;
-    color: #F4AB63; }
-  .therapist-story .badge span:nth-of-type(2n) {
-    border: 1px dotted #e95738;
-    color: #e95738; }
-  .therapist-story .badge span:nth-of-type(3n) {
-    border: 1px dotted #0a628f;
-    color: #0a628f; }
-  .therapist-story .badge span:nth-of-type(4n) {
-    border: 1px dotted #0BB20C;
-    color: #0BB20C; }
-  .therapist-story .badge span:nth-of-type(5n) {
-    border: 1px dotted #555555;
-    color: #555555; }
 .therapist-story .detail {
   font-size: 13px;
   text-indent: 1em; }
@@ -864,6 +845,28 @@ therapist-story
   font-size: 16px; }
 .therapist-story .am-tab-panel image {
   margin-bottom: 10px; }
+
+.badge span {
+  border-radius: 5px;
+  font-size: 11px;
+  padding: 2px 5px;
+  margin: 3px 2px;
+  display: inline-block; }
+  .badge span:nth-of-type(2n+1) {
+    border: 1px dotted #F4AB63;
+    color: #F4AB63; }
+  .badge span:nth-of-type(2n) {
+    border: 1px dotted #e95738;
+    color: #e95738; }
+  .badge span:nth-of-type(3n) {
+    border: 1px dotted #0a628f;
+    color: #0a628f; }
+  .badge span:nth-of-type(4n) {
+    border: 1px dotted #0BB20C;
+    color: #0BB20C; }
+  .badge span:nth-of-type(5n) {
+    border: 1px dotted #555555;
+    color: #555555; }
 
 .am-tabs-nav li a {
   color: #333; }
@@ -883,6 +886,8 @@ therapist-register
   margin-bottom: 80px; }
   .therapist-register .avatar {
     padding: 2%; }
+  .therapist-register form textarea {
+    font-size: 13px; }
   .therapist-register form .am-u-sm-3 {
     padding: 0px;
     padding-right: 10px;
@@ -951,16 +956,18 @@ therapist-detail
   .therapist-detail .list-header li {
     width: 25%; }
   .therapist-detail .am-comments-list {
-    border-top: 1px solid #e8e8e8;
     border-bottom: 8px solid #e8e8e8; }
-    .therapist-detail .am-comments-list .am-comment {
-      border-bottom: 1px solid #e8e8e8;
-      margin-top: 0px; }
-      .therapist-detail .am-comments-list .am-comment .am-comment-meta {
-        padding: 5px 15px;
-        line-height: 2em; }
-      .therapist-detail .am-comments-list .am-comment:last-of-type {
-        border-bottom: none; }
+
+.am-comments-list {
+  border-top: 1px solid #e8e8e8; }
+  .am-comments-list .am-comment {
+    border-bottom: 1px solid #e8e8e8;
+    margin-top: 0px; }
+    .am-comments-list .am-comment .am-comment-meta {
+      padding: 5px 15px;
+      line-height: 2em; }
+    .am-comments-list .am-comment:last-of-type {
+      border-bottom: none; }
 
 .border-top {
   border-top: 1px solid #e8e8e8; }
@@ -981,5 +988,70 @@ therapist-detail
 
 .more .am-icon-chevron-down {
   color: #999; }
+
+/**
+service-evaluate
+ */
+.service-evaluate {
+  margin-top: 50px;
+  margin-bottom: 50px; }
+  .service-evaluate .comment-header .top {
+    border-bottom: 1px solid #e8e8e8;
+    line-height: 2em; }
+  .service-evaluate .comment-header .badge {
+    padding-left: 3%;
+    padding-right: 3%;
+    border-top: 1px solid #e8e8e8;
+    padding-top: 10px; }
+
+.evaluate-bage {
+  text-align: center; }
+  .evaluate-bage button {
+    border-radius: 5px;
+    font-weight: 400;
+    background-color: #fff;
+    margin: 3px 1%;
+    display: inline-block;
+    border: 1px dotted #999;
+    width: 22%; }
+    .evaluate-bage button.active {
+      border: 1px dotted #F4AB63;
+      background-color: #F4AB63;
+      color: #ffffff; }
+
+/**
+schedule
+ */
+.schedule {
+  margin-top: 50px;
+  margin-bottom: 50px; }
+  .schedule .popup-bottom {
+    margin-bottom: 49px; }
+    .schedule .popup-bottom .am-u-sm-12 {
+      color: #999; }
+  .schedule .toolbar .toolbar-inner {
+    padding: 0px;
+    height: 45px; }
+  .schedule .am-list {
+    margin-bottom: 0px; }
+  .schedule .weui-popup__modal .modal-content {
+    padding-top: 45px; }
+  .schedule .toolbar .title {
+    font-size: 20px;
+    line-height: 45px; }
+  .schedule .toolbar .picker-button {
+    line-height: 45px; }
+  .schedule .close-popup {
+    color: #F4AB63; }
+  .schedule a {
+    color: #333; }
+  .schedule .fc-time-grid .fc-slats td {
+    height: 2em; }
+  .schedule .fc-event-container a.active {
+    background-color: #F4AB63;
+    color: #fff;
+    border: 1px solid #F4AB63; }
+  .schedule .fc-time-grid-event.fc-short .fc-time, .schedule .fc-time-grid-event.fc-short .fc-title {
+    display: block; }
 
 /*# sourceMappingURL=index.css.map */
