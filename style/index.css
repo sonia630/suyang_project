@@ -191,6 +191,8 @@ a {
       font-size: 16px; }
   .main-containter .service-list p {
     margin: 0px; }
+  .main-containter .service-list button.am-radius {
+    padding: 3px 1em; }
 
 .am-list > li {
   padding: 10px 0px;
