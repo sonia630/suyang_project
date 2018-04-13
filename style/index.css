@@ -24,6 +24,11 @@ ul, ul li {
 .am-margin-left-sm {
   margin-left: 8px; }
 
+.am-input-group-btn:last-child > .am-btn, .am-input-group-btn:last-child > .am-btn-group {
+  font-size: 14px;
+  padding-bottom: 0px;
+  padding-top: 0px; }
+
 button {
   border: none; }
 
