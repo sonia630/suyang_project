@@ -7,10 +7,16 @@ body {
   font-family: Tahoma, Arial, stheiti, "Droid Sans", "Microsoft Yahei";
   color: #333; }
 
+html {
+  font-size: 12px; }
+
 ul, ul li {
   list-style: none;
   padding: 0px;
   margin: 0px; }
+
+[class*=am-u-] {
+  padding-right: 10px; }
 
 .am-text-cost {
   color: #e95738; }
@@ -101,11 +107,20 @@ a {
 .picker-calendar-week-days + .picker-calendar-months {
   height: 200px; }
 
+/**
+  overwrite weui
+ */
+.am-datepicker tr.am-datepicker-header {
+  font-size: 1.6em; }
+
 .weui-picker-calendar .picker-modal-inner {
   height: 221px; }
 
 .weui-picker-calendar {
   height: 241px; }
+
+.am-datepicker tr.am-datepicker-header {
+  font-size: 1.6em; }
 
 /**
   home page
@@ -1059,7 +1074,6 @@ schedule
   .schedule .weui-popup__modal .modal-content {
     padding-top: 45px; }
   .schedule .toolbar .title {
-    font-size: 20px;
     line-height: 45px; }
   .schedule .toolbar .picker-button {
     line-height: 45px; }
