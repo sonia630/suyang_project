@@ -16,6 +16,7 @@ ul, ul li {
   margin: 0px; }
 
 [class*=am-u-] {
+  padding-left: 10px;
   padding-right: 10px; }
 
 .am-text-cost {
@@ -52,7 +53,7 @@ h3.am-text-lg {
   font-size: 18px; }
 
 .am-btn-lg {
-  font-size: 16px; }
+  font-size: 14px; }
 
 .am-text-xs {
   font-size: 12px; }
@@ -67,6 +68,9 @@ p {
 .am-btn-sm, .am-form-group-sm .am-checkbox, .am-form-group-sm .am-form-field, .am-form-group-sm .am-form-label, .am-form-group-sm .am-radio {
   font-size: 14px !important;
   font-size: 14px; }
+
+.weui-btn_primary {
+  background-color: #F4AB63; }
 
 .am-btn-primary {
   background-color: #F4AB63;
@@ -108,7 +112,7 @@ a {
   height: 200px; }
 
 /**
-  overwrite weui
+  overwrite jweui
  */
 .am-datepicker tr.am-datepicker-header {
   font-size: 1.6em; }
@@ -121,6 +125,10 @@ a {
 
 .am-datepicker tr.am-datepicker-header {
   font-size: 1.6em; }
+
+.weui-toptips {
+  position: fixed;
+  z-index: 99999; }
 
 /**
   home page
@@ -1089,5 +1097,33 @@ schedule
     border: 1px solid #F4AB63; }
   .schedule .fc-time-grid-event.fc-short .fc-time, .schedule .fc-time-grid-event.fc-short .fc-title {
     display: block; }
+
+/**
+ autocomplete
+ */
+.autocomplete {
+  position: absolute;
+  z-index: 10;
+  background: #fff;
+  top: 70px;
+  width: 98%;
+  height: calc(100vh - 120px);
+  overflow: scroll;
+  margin: 1%; }
+  .autocomplete li {
+    padding-left: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+    line-height: 1.5em; }
+    .autocomplete li div {
+      font-size: 12px;
+      color: #777; }
+
+/**
+order-success
+ */
+.order-success {
+  margin-top: 30%; }
 
 /*# sourceMappingURL=index.css.map */
