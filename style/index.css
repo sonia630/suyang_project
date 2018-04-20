@@ -114,6 +114,16 @@ a {
 /**
   overwrite jweui
  */
+.weui-picker-modal.weui-picker-modal-visible p {
+  margin-bottom: 0px;
+  margin-top: 0px; }
+
+.weui-picker-modal.weui-picker-modal-visible {
+  margin-bottom: 50px; }
+
+.toolbar, .toolbar .title {
+  font-size: 18px; }
+
 .am-datepicker tr.am-datepicker-header {
   font-size: 1.6em; }
 
@@ -1107,7 +1117,7 @@ schedule
   background: #fff;
   top: 70px;
   width: 98%;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 170px);
   overflow: scroll;
   margin: 1%; }
   .autocomplete li {
@@ -1125,5 +1135,19 @@ order-success
  */
 .order-success {
   margin-top: 30%; }
+
+/**
+pay-order
+ */
+.pay-order {
+  margin-top: 50px;
+  margin-bottom: 50px; }
+  .pay-order .pay-way {
+    line-height: 40px; }
+    .pay-order .pay-way label {
+      text-indent: 1em;
+      background: #f7f7f7;
+      width: 100%;
+      margin-bottom: -10px; }
 
 /*# sourceMappingURL=index.css.map */
