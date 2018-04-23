@@ -1150,4 +1150,24 @@ pay-order
       width: 100%;
       margin-bottom: -10px; }
 
+/**
+appointment-success
+ */
+.appointment-success {
+  margin-top: 70px;
+  margin-bottom: 50px; }
+  .appointment-success h1 {
+    line-height: 1em;
+    margin-bottom: 16px; }
+  .appointment-success p {
+    line-height: 1em;
+    margin-bottom: 24px;
+    font-size: 12px;
+    color: #999; }
+  .appointment-success ul li {
+    min-height: 30px;
+    line-height: 25px; }
+    .appointment-success ul li span {
+      color: #999; }
+
 /*# sourceMappingURL=index.css.map */
