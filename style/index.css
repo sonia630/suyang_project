@@ -99,6 +99,15 @@ a {
   border: none;
   border-bottom: 1px solid #e8e8e8; }
 
+.am-form input[type=number].am-radius, .am-form input[type=search].am-radius, .am-form input[type=text].am-radius, .am-form input[type=password].am-radius, .am-form input[type=datetime].am-radius, .am-form input[type=datetime-local].am-radius, .am-form input[type=date].am-radius, .am-form input[type=month].am-radius, .am-form input[type=time].am-radius, .am-form input[type=week].am-radius, .am-form input[type=email].am-radius, .am-form input[type=url].am-radius, .am-form input[type=tel].am-radius, .am-form input[type=color].am-radius, .am-form select.am-radius, .am-form textarea.am-radius, .am-form-field.am-radius {
+  border: 1px solid #e8e8e8;
+  font-size: 13px; }
+
+input, select, .am-input-group-btn:last-child > .am-btn, .am-form input[type=text] {
+  height: 30px;
+  font-size: 13px;
+  border: 1px solid #e8e8e8; }
+
 .picker-calendar-week-days {
   height: 21px;
   font-size: 13px; }
@@ -1228,14 +1237,13 @@ my-story
       border-top-color: #5eb95e;
       bottom: -5px; }
 
+.open-case .am-form input[type=number] {
+  border: 1px solid #e8e8e8;
+  width: 50px; }
 .open-case h2 {
   color: #F4AB63;
   text-indent: 10px;
   margin: 0px; }
-.open-case input, .open-case select, .open-case .am-input-group-btn:last-child > .am-btn, .open-case .am-form input[type=text] {
-  height: 30px;
-  font-size: 13px;
-  border: 1px solid #e8e8e8; }
 .open-case textarea {
   border: 1px solid #e8e8e8;
   font-size: 13px;
@@ -1266,5 +1274,21 @@ my-story
   line-height: 10px; }
 .open-case .weui-uploader__input {
   height: 100%; }
+
+.certificate {
+  padding: 3%; }
+  .certificate h2 {
+    color: #F4AB63;
+    margin-bottom: 10px; }
+  .certificate .pic {
+    border-radius: 5px;
+    border: 1px solid #e8e8e8;
+    width: 48%;
+    float: left;
+    margin-bottom: 2%;
+    text-align: center;
+    line-height: 2em; }
+    .certificate .pic image {
+      height: 100px; }
 
 /*# sourceMappingURL=index.css.map */
