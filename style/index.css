@@ -1291,4 +1291,17 @@ my-story
     .certificate .pic image {
       height: 100px; }
 
+/**
+occupation
+ */
+.occupation .am-comment-meta {
+  font-size: 16px;
+  font-weight: 500; }
+  .occupation .am-comment-meta i {
+    font-size: 24px;
+    opacity: 0.8;
+    cursor: pointer; }
+.occupation .am-comment-bd {
+  text-indent: 1em; }
+
 /*# sourceMappingURL=index.css.map */
