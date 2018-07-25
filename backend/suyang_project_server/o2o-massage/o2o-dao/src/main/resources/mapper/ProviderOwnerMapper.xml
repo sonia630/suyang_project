@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.o2o.nm.mapper.ProviderOwnerMapper">
+    <select id="getProvidersOrderbyEval" resultType="com.o2o.nm.bo.ProviderBo">
+        select timestampdiff(year,birthday,now()) age,
+        providerInfo.provider_introduction,
+        user.head_pic,
+        user.real_name,
+        providerInfo.level,
+        round(6378.138*2*asin(sqrt(pow(sin((latitude*pi()/180-#{userLat}*pi()/180)/2),2)+cos(latitude*pi()/180)*cos(#{userLat}*pi()/180)*
+        pow(sin( (longitude*pi()/180-#{userLng}*pi()/180)/2),2)))*1000)
+        as distance,providerInfo.provider_user_id as providerId
+        from provider_info as providerInfo LEFT JOIN user_info user on providerInfo.provider_user_id=user_id
+        LEFT JOIN (select provider_user_id as user_id,sum(evaluation_score) as sum from evaluation_info GROUP BY
+        provider_user_id) as evel
+        on evel.user_id=providerInfo.provider_user_id
+        where user_type in
+        <foreach collection="providerVo.userTypes" item="item" open="(" close=")" separator=", ">
+            #{item}
+        </foreach>
+        and providerInfo.status=#{providerVo.providerStatus} and user.status=#{providerVo.userStatus}
+        and latitude >= #{swLatitude}
+        and longitude >= #{swLongitude} and  <![CDATA[latitude<= #{neLatitude}]]>
+        and <![CDATA[longitude<= #{neLongitude}]]>
+        order by sum desc;
+    </select>
+    <select id="getProviderValidateInfo" resultType="com.o2o.nm.bo.ProviderValidateBo">
+        SELECT id_num,latitude from user_info user JOIN provider_info provider
+        on user.user_id=provider.provider_user_id where user.user_id=#{userId}
+    </select>
+    <select id="getProvidersOrderbyEvalCount" resultType="java.lang.Integer">
+        select count(1)
+        from provider_info as providerInfo LEFT JOIN user_info user on providerInfo.provider_user_id=user_id
+        LEFT JOIN (select provider_user_id as user_id,sum(evaluation_score) as sum from evaluation_info GROUP BY
+        provider_user_id) as evel
+        on evel.user_id=providerInfo.provider_user_id
+        where user_type in
+        <foreach collection="providerVo.userTypes" item="item" open="(" close=")" separator=", ">
+            #{item}
+        </foreach>
+        and providerInfo.status=#{providerVo.providerStatus} and user.status=#{providerVo.userStatus}
+        and latitude >= #{swLatitude}
+        and longitude >= #{swLongitude} and  <![CDATA[latitude<= #{neLatitude}]]>
+        and <![CDATA[longitude<= #{neLongitude}]]>
+    </select>
+    <select id="getProviderDetail" resultType="com.o2o.nm.bo.ProviderDetail">
+        SELECT real_name,head_pic,level,provider_introduction from provider_info providerInfo join user_info
+        on user_id = providerInfo.provider_user_id
+        where providerInfo.provider_user_id=#{providerId} group by providerInfo.provider_user_id;
+    </select>
+    <select id="getProviderServiceCat" resultType="com.o2o.nm.entity.ServiceCategory">
+        select distinct (serviceCat.cat_id),cat_name from srv_provider_srv_rel rel join service_info service
+        on rel.service_id=service.service_id join service_info_category serviceCat
+        on serviceCat.service_id=service.service_id join service_category cat
+        on cat.cat_id=serviceCat.cat_id
+        where rel.provider_user_id=#{providerId} order by sort
+    </select>
+    <select id="getProviderServiceCatInfo" resultType="com.o2o.nm.bo.ProviderServiceInfo">
+        select serviceInfo.service_name,service_summary,estimated_time,price,serviceTimes,rel.service_id from service_info serviceInfo
+        join srv_provider_srv_rel rel on rel.service_id=serviceInfo.service_id
+        join service_info_category sic on sic.service_id=serviceInfo.service_id
+        join service_category cat on cat.cat_id = sic.cat_id
+        left join (select service_id,count(evaluation_id) serviceTimes from evaluation_info eval
+        join  order_info orderInfo on orderInfo.order_no=eval.order_no where eval.provider_user_id=#{providerId}
+        group by orderInfo.service_id ) as aa on aa.service_id=rel.service_id
+        where rel.provider_user_id=#{providerId} and sic.cat_id=#{catId};
+    </select>
+    <select id="getProviderEvalStatic" resultType="com.o2o.nm.bo.ProviderEvalStatic">
+        select count(evaluation_score) evalCount,sum(evaluation_score) evalSum from evaluation_info where provider_user_id=#{providerId}
+    </select>
+    <select id="getProviderServiceTimes" resultType="java.lang.Integer">
+        select sum(service_times) from provider_service_static  where provider_user_id=#{providerId}
+    </select>
+</mapper>

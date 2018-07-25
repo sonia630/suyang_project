@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.o2o.nm.sys.mapper.MenuMapper">
+
+    <select id="getAllMenus" resultType="Permission">
+        SELECT t.*
+        from sys_permission t where menu=1
+        ORDER BY sort
+    </select>
+
+    <!-- 通过用户ID查询 -->
+    <select id="findMenuByRoleId" resultType="Permission">
+        SELECT DISTINCT t.*
+        from sys_permission t
+        LEFT JOIN sys_role_menu rm on t.id=rm.menu_id
+        WHERE rm.role_id= #{roleId} and menu=1
+        ORDER BY sort
+    </select>
+
+    <update id="updateMenuSort">
+       update sys_permission set sort = #{sort} where id = #{id}
+    </update>
+    <update id="updateResParent">
+        update sys_permission set parent_id = #{pid} where id = #{id}
+    </update>
+</mapper>

@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+    <!-- !!!! Driver Class Path !!!! -->
+    <!-- <classPathEntry location="/Users/lawrence/.m2/repository/mysql/mysql-connector-java/5.1.31/mysql-connector-java-5.1.31.jar"/> -->
+    <!--<classPathEntry
+            location="C:\Users\Administrator\.m2\repository\mysql\mysql-connector-java\5.1.25\mysql-connector-java-5.1.25.jar"/>
+-->
+    <!--<classPathEntry
+            location="/home/warning5/pro/code/o2o-massage/o2o-client-web/target/o2o-web/WEB-INF/lib/mysql-connector-java-5.1.21.jar"/>
+-->
+    <classPathEntry
+            location="/home/warning5/mysql-connector-java-5.1.21.jar"/>
+
+    <context id="context" targetRuntime="MyBatis3">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <commentGenerator>
+            <property name="suppressAllComments" value="false"/>
+            <property name="suppressDate" value="true"/>
+            <property name="addRemarkComments" value="true" />
+        </commentGenerator>
+
+        <!-- !!!! Database Configurations !!!! -->
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/o2o_nm?characterEncoding=utf-8"
+                        userId="root"
+                        password="123456"/>-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/o2o_nm?characterEncoding=utf-8"
+                        userId="root"
+                        password="123456"/>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- !!!! Model Configurations !!!! -->
+        <javaModelGenerator targetPackage="com.o2o.massage.dao.entity"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="false"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- !!!! Mapper XML Configurations !!!! -->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+
+        <!-- !!!! Mapper Interface Configurations !!!! -->
+        <javaClientGenerator targetPackage="com.o2o.massage.dao.mapper"
+                             targetProject="src/main/java" type="XMLMAPPER">
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
+        <!-- 5，enableInsert（默认true）：指定是否生成insert语句；
+        6，enableSelectByPrimaryKey（默认true）：指定是否生成按照主键查询对象的语句（就是getById或get）；
+        7，enableSelectByExample（默认true）：MyBatis3Simple为false，指定是否生成动态查询语句；
+        8，enableUpdateByPrimaryKey（默认true）：指定是否生成按照主键修改对象的语句（即update)；
+        9，enableDeleteByPrimaryKey（默认true）：指定是否生成按照主键删除对象的语句（即delete）；
+        10，enableDeleteByExample（默认true）：MyBatis3Simple为false，指定是否生成动态删除语句；
+        11，enableCountByExample（默认true）：MyBatis3Simple为false，指定是否生成动态查询总条数语句（用于分页的总条数查询）；
+        12，enableUpdateByExample（默认true）：MyBatis3Simple为false，指定是否生成动态修改语句（只修改对象中不为空的属性）；
+        -->
+
+        <!--!!!! Table Configurations !!!!-->
+        <!--<table tableName="user_info" domainObjectName="UserBaseInfo"
+               delimitAllColumns="true"
+               enableInsert="true"
+               enableSelectByPrimaryKey="true"
+               enableSelectByExample="true"
+               enableUpdateByPrimaryKey="true"
+               enableDeleteByExample="false"
+               enableDeleteByPrimaryKey="false"
+               enableCountByExample="true"
+               enableUpdateByExample="true">
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+            <property name="modelOnly" value="false"/>
+        </table>-->
+
+        <!--<table tableName="customer_info" domainObjectName="CustomerInfo"
+               delimitAllColumns="true"
+               enableInsert="true"
+               enableSelectByPrimaryKey="true"
+               enableSelectByExample="true"
+               enableUpdateByPrimaryKey="true"
+               enableDeleteByExample="false"
+               enableDeleteByPrimaryKey="false"
+               enableCountByExample="true"
+               enableUpdateByExample="true">
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+            <property name="modelOnly" value="false"/>
+        </table>-->
+
+         <table tableName="customer_address" domainObjectName="CustomerAddress"
+                delimitAllColumns="true"
+                enableInsert="true"
+                enableSelectByPrimaryKey="true"
+                enableSelectByExample="true"
+                enableUpdateByPrimaryKey="true"
+                enableDeleteByExample="false"
+                enableDeleteByPrimaryKey="false"
+                enableCountByExample="true"
+                enableUpdateByExample="true">
+             <property name="ignoreQualifiersAtRuntime" value="true"/>
+             <property name="modelOnly" value="false"/>
+         </table>
+        <!--<table tableName="provider_schedule" domainObjectName="ProviderSchedule"
+               delimitAllColumns="true"
+               enableInsert="true"
+               enableSelectByPrimaryKey="true"
+               enableSelectByExample="true"
+               enableUpdateByPrimaryKey="true"
+               enableDeleteByExample="false"
+               enableDeleteByPrimaryKey="false"
+               enableCountByExample="true"
+               enableUpdateByExample="true">
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+            <property name="modelOnly" value="false"/>
+        </table>-->
+      <!--  <table tableName="provider_certification_info" domainObjectName="providerCertificationInfo"
+               delimitAllColumns="true"
+               enableInsert="true"
+               enableSelectByPrimaryKey="true"
+               enableSelectByExample="true"
+               enableUpdateByPrimaryKey="true"
+               enableDeleteByExample="false"
+               enableDeleteByPrimaryKey="false"
+               enableCountByExample="true"
+               enableUpdateByExample="true">
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+            <property name="modelOnly" value="false"/>
+        </table>-->
+        <!--
+                <table tableName="provider_info" domainObjectName="ProviderInfo"
+                       delimitAllColumns="true"
+                       enableInsert="true"
+                       enableSelectByPrimaryKey="true"
+                       enableSelectByExample="true"
+                       enableUpdateByPrimaryKey="true"
+                       enableDeleteByExample="false"
+                       enableDeleteByPrimaryKey="false"
+                       enableCountByExample="true"
+                       enableUpdateByExample="true">
+                    <property name="ignoreQualifiersAtRuntime" value="true"/>
+                    <property name="modelOnly" value="false"/>
+                </table>
+        -->
+
+        <!--<table tableName="family_member" domainObjectName="FamilyMember"
+               delimitAllColumns="true"
+               enableInsert="true"
+               enableSelectByPrimaryKey="true"
+               enableSelectByExample="true"
+               enableUpdateByPrimaryKey="true"
+               enableDeleteByExample="false"
+               enableDeleteByPrimaryKey="false"
+               enableCountByExample="true"
+               enableUpdateByExample="true">
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+            <property name="modelOnly" value="false"/>
+        </table>
+
+        <table tableName="login_token" domainObjectName="LoginToken"
+               delimitAllColumns="true"
+               enableInsert="true"
+               enableSelectByPrimaryKey="false"
+               enableSelectByExample="true"
+               enableUpdateByPrimaryKey="true"
+               enableDeleteByExample="false"
+               enableDeleteByPrimaryKey="false"
+               enableCountByExample="false"
+               enableUpdateByExample="true">
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+            <property name="modelOnly" value="false"/>
+        </table>
+
+        <table tableName="verify_code_info" domainObjectName="VerifyCodeInfo"
+               delimitAllColumns="true"
+               enableInsert="true"
+               enableSelectByPrimaryKey="false"
+               enableSelectByExample="true"
+               enableUpdateByPrimaryKey="true"
+               enableDeleteByExample="false"
+               enableDeleteByPrimaryKey="false"
+               enableCountByExample="false"
+               enableUpdateByExample="true">
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+            <property name="modelOnly" value="false"/>
+        </table>-->
+        <!--<table tableName="service_info" domainObjectName="ServiceInfo"
+               delimitAllColumns="true"
+               enableInsert="true"
+               enableSelectByPrimaryKey="true"
+               enableSelectByExample="true"
+               enableUpdateByPrimaryKey="true"
+               enableDeleteByExample="false"
+               enableDeleteByPrimaryKey="false"
+               enableCountByExample="true"
+               enableUpdateByExample="true">
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+            <property name="modelOnly" value="false"/>
+        </table>
+        <table tableName="srv_provider_srv_rel" domainObjectName="SrvProviderSrvRel"
+               delimitAllColumns="true"
+               enableInsert="true"
+               enableSelectByPrimaryKey="true"
+               enableSelectByExample="true"
+               enableUpdateByPrimaryKey="true"
+               enableDeleteByExample="false"
+               enableDeleteByPrimaryKey="false"
+               enableCountByExample="true"
+               enableUpdateByExample="true">
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+            <property name="modelOnly" value="false"/>
+        </table>-->
+        <!--<table tableName="service_time_def" domainObjectName="SrvTimeDefinition"
+               delimitAllColumns="true"
+               enableInsert="true"
+               enableSelectByPrimaryKey="true"
+               enableSelectByExample="true"
+               enableUpdateByPrimaryKey="true"
+               enableDeleteByExample="true"
+               enableDeleteByPrimaryKey="false"
+               enableCountByExample="true"
+               enableUpdateByExample="true">
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+            <property name="modelOnly" value="false"/>
+        </table>-->
+       <!-- <table tableName="order_info" domainObjectName="OrderInfo"
+               delimitAllColumns="true"
+               enableInsert="true"
+               enableSelectByPrimaryKey="true"
+               enableSelectByExample="true"
+               enableUpdateByPrimaryKey="true"
+               enableDeleteByExample="false"
+               enableDeleteByPrimaryKey="false"
+               enableCountByExample="true"
+               enableUpdateByExample="true">
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+            <property name="modelOnly" value="false"/>
+        </table>-->
+     <!--   <table tableName="provider_service_static" domainObjectName="ProviderServiceStatic"
+               delimitAllColumns="true"
+               enableInsert="true"
+               enableSelectByPrimaryKey="true"
+               enableSelectByExample="true"
+               enableUpdateByPrimaryKey="true"
+               enableDeleteByExample="false"
+               enableDeleteByPrimaryKey="false"
+               enableCountByExample="true"
+               enableUpdateByExample="true">
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+            <property name="modelOnly" value="false"/>
+        </table>-->
+        <!-- <table tableName="payment_order" domainObjectName="PaymentOrder"
+                delimitAllColumns="true"
+                enableInsert="true"
+                enableSelectByPrimaryKey="true"
+                enableSelectByExample="true"
+                enableUpdateByPrimaryKey="true"
+                enableDeleteByExample="false"
+                enableDeleteByPrimaryKey="false"
+                enableCountByExample="true"
+                enableUpdateByExample="true">
+             <property name="ignoreQualifiersAtRuntime" value="true"/>
+             <property name="modelOnly" value="false"/>
+         </table>-->
+
+        <!--<table tableName="payment_record" domainObjectName="PaymentRecord"
+               delimitAllColumns="true"
+               enableInsert="true"
+               enableSelectByPrimaryKey="true"
+               enableSelectByExample="true"
+               enableUpdateByPrimaryKey="true"
+               enableDeleteByExample="false"
+               enableDeleteByPrimaryKey="false"
+               enableCountByExample="true"
+               enableUpdateByExample="true">
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+            <property name="modelOnly" value="false"/>
+        </table>
+        <table tableName="refund_record" domainObjectName="RefundRecord"
+               delimitAllColumns="true"
+               enableInsert="true"
+               enableSelectByPrimaryKey="true"
+               enableSelectByExample="true"
+               enableUpdateByPrimaryKey="true"
+               enableDeleteByExample="false"
+               enableDeleteByPrimaryKey="false"
+               enableCountByExample="true"
+               enableUpdateByExample="true">
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+            <property name="modelOnly" value="false"/>
+        </table>-->
+    </context>
+</generatorConfiguration>

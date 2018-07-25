@@ -1,0 +1,306 @@
+[
+  {
+    "id": "-1",
+    "parent": "#",
+    "state": {
+      "opened": true
+    },
+    "text": "顶层菜单"
+  },
+  {
+    "id": "4028ea815a78e9e6015a78f35cbe0001",
+    "parent": "4028ea815a78e9e6015a78f1dc9d0000",
+    "state": {
+      "opened": true
+    },
+    "text": "表单配置"
+  },
+  {
+    "id": "40281e815c547c32015c54a21e260038",
+    "parent": "4028ea815a78e9e6015a78f1dc9d0000",
+    "state": {
+      "opened": true
+    },
+    "text": "生成案列"
+  },
+  {
+    "id": "40288ab85a5eecc6015a5ef22ad80001",
+    "parent": "-1",
+    "state": {
+      "opened": true
+    },
+    "text": "系统设置"
+  },
+  {
+    "id": "40288ab85a5eecc6015a5ef6ce870002",
+    "parent": "40288ab85a5eecc6015a5ef22ad80001",
+    "state": {
+      "opened": true
+    },
+    "text": "用户管理"
+  },
+  {
+    "id": "40288ab85a5eecc6015a5ef8f2890003",
+    "parent": "40288ab85a5eecc6015a5ef22ad80001",
+    "state": {
+      "opened": true
+    },
+    "text": "机构管理"
+  },
+  {
+    "id": "40288ab85a5eecc6015a5ef95c700004",
+    "parent": "40288ab85a5eecc6015a5ef22ad80001",
+    "state": {
+      "opened": true
+    },
+    "text": "角色管理"
+  },
+  {
+    "id": "40288ab85a5eecc6015a5ef9f6160005",
+    "parent": "40288ab85a5eecc6015a5ef22ad80001",
+    "state": {
+      "opened": true
+    },
+    "text": "菜单管理"
+  },
+  {
+    "id": "4028ea815a701416015a7075b4f9001f",
+    "parent": "-1",
+    "state": {
+      "opened": true
+    },
+    "text": "系统监控"
+  },
+  {
+    "id": "40288ab85b604adf015b605023a70000",
+    "parent": "4028ea815a701416015a7075b4f9001f",
+    "state": {
+      "opened": true
+    },
+    "text": "在线用户"
+  },
+  {
+    "id": "40281e815c097acf015c097bcaea0000",
+    "parent": "4028ea815a701416015a7075b4f9001f",
+    "state": {
+      "opened": true
+    },
+    "text": "用户最后在线情况"
+  },
+  {
+    "id": "4028ea815a701416015a70766a7a0020",
+    "parent": "4028ea815a701416015a7075b4f9001f",
+    "state": {
+      "opened": true
+    },
+    "text": "数据库监控"
+  },
+  {
+    "id": "40288ab85c33548d015c33cdc5a600f3",
+    "parent": "4028ea815a701416015a7075b4f9001f",
+    "state": {
+      "opened": true
+    },
+    "text": "附件信息"
+  },
+  {
+    "id": "40281e815c54d147015c54daf16c0001",
+    "parent": "4028ea815a701416015a7075b4f9001f",
+    "state": {
+      "opened": true
+    },
+    "text": "系统日志"
+  },
+  {
+    "id": "40288ab85cf8276b015cf82debcb005b",
+    "parent": "-1",
+    "state": {
+      "opened": true
+    },
+    "text": "常见工具"
+  },
+  {
+    "id": "40281e815beda90f015bedcf7102000f",
+    "parent": "40288ab85cf8276b015cf82debcb005b",
+    "state": {
+      "opened": true
+    },
+    "text": "计划任务"
+  },
+  {
+    "id": "40288ab85befd65a015bf088333a0015",
+    "parent": "40288ab85cf8276b015cf82debcb005b",
+    "state": {
+      "opened": true
+    },
+    "text": "多数据源管理"
+  },
+  {
+    "id": "40281e815c912406015c9149f7b80044",
+    "parent": "-1",
+    "state": {
+      "opened": true
+    },
+    "text": "通知公告"
+  },
+  {
+    "id": "40281e815c912406015c914a1bc30045",
+    "parent": "40281e815c912406015c9149f7b80044",
+    "state": {
+      "opened": true
+    },
+    "text": "通知公告"
+  },
+  {
+    "id": "40288ab85c8593cd015c859f47960016",
+    "parent": "-1",
+    "state": {
+      "opened": true
+    },
+    "text": "短信设置"
+  },
+  {
+    "id": "40288ab85bea9452015beaa9e7a70002",
+    "parent": "40288ab85c8593cd015c859f47960016",
+    "state": {
+      "opened": true
+    },
+    "text": "参数配置"
+  },
+  {
+    "id": "40288ab85c8593cd015c859fa3240017",
+    "parent": "40288ab85c8593cd015c859f47960016",
+    "state": {
+      "opened": true
+    },
+    "text": "短信模版"
+  },
+  {
+    "id": "40281e815c880c25015c880d29870001",
+    "parent": "40288ab85c8593cd015c859f47960016",
+    "state": {
+      "opened": true
+    },
+    "text": "短信发送"
+  },
+  {
+    "id": "40288ab85c85fa54015c860cee2e0023",
+    "parent": "40288ab85c8593cd015c859f47960016",
+    "state": {
+      "opened": true
+    },
+    "text": "发送日志"
+  },
+  {
+    "id": "40288ab85c9eeb5c015c9f4d1f8e0000",
+    "parent": "-1",
+    "state": {
+      "opened": true
+    },
+    "text": "统计报表"
+  },
+  {
+    "id": "40288ab85c9eeb5c015c9f4e1cd00001",
+    "parent": "40288ab85c9eeb5c015c9f4d1f8e0000",
+    "state": {
+      "opened": true
+    },
+    "text": "折线图"
+  },
+  {
+    "id": "40288ab85c9eeb5c015c9f5fa02e002a",
+    "parent": "40288ab85c9eeb5c015c9f4d1f8e0000",
+    "state": {
+      "opened": true
+    },
+    "text": "柱状图"
+  },
+  {
+    "id": "40288ab85c9eeb5c015c9f626f58002d",
+    "parent": "40288ab85c9eeb5c015c9f4d1f8e0000",
+    "state": {
+      "opened": true
+    },
+    "text": "漏斗图"
+  },
+  {
+    "id": "40288ab85c9eeb5c015c9f62e726002e",
+    "parent": "40288ab85c9eeb5c015c9f4d1f8e0000",
+    "state": {
+      "opened": true
+    },
+    "text": "仪表盘"
+  },
+  {
+    "id": "40288ab85c9eeb5c015c9f6390fd002f",
+    "parent": "40288ab85c9eeb5c015c9f4d1f8e0000",
+    "state": {
+      "opened": true
+    },
+    "text": "K线图"
+  },
+  {
+    "id": "40288ab85c9eeb5c015c9f6572630030",
+    "parent": "40288ab85c9eeb5c015c9f4d1f8e0000",
+    "state": {
+      "opened": true
+    },
+    "text": "饼状图"
+  },
+  {
+    "id": "40288ab85c9eeb5c015c9f65e3a50031",
+    "parent": "40288ab85c9eeb5c015c9f4d1f8e0000",
+    "state": {
+      "opened": true
+    },
+    "text": "雷达图"
+  },
+  {
+    "id": "40288ab85c9eeb5c015c9f672f2e0032",
+    "parent": "40288ab85c9eeb5c015c9f4d1f8e0000",
+    "state": {
+      "opened": true
+    },
+    "text": "散点图"
+  },
+  {
+    "id": "40288ab85c9eeb5c015c9f9694480064",
+    "parent": "40288ab85c9eeb5c015c9f4d1f8e0000",
+    "state": {
+      "opened": true
+    },
+    "text": "关系图"
+  },
+  {
+    "id": "40288ab85c1ae76c015c1b12b68a0000",
+    "parent": "-1",
+    "state": {
+      "opened": true
+    },
+    "text": "代码案例"
+  },
+  {
+    "id": "40288ab85c1ae76c015c1b1316680001",
+    "parent": "40288ab85c1ae76c015c1b12b68a0000",
+    "state": {
+      "opened": true
+    },
+    "text": "编辑器"
+  },
+  {
+    "id": "40288ab85c1e2442015c1e3246b70000",
+    "parent": "40288ab85c1ae76c015c1b12b68a0000",
+    "state": {
+      "opened": true
+    },
+    "text": "文件上传"
+  },
+  {
+    "id": "40288ab85c3df6b7015c3e3d1e770000",
+    "parent": "40288ab85c1ae76c015c1b12b68a0000",
+    "state": {
+      "opened": true
+    },
+    "text": "搜索自动补全"
+  }
+]

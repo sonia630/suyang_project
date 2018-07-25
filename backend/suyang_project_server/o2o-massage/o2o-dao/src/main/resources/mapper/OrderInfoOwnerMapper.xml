@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.o2o.nm.mapper.OrderInfoOwnerMapper">
+
+    <select id="getOrderDetailOrderNo" resultType="com.o2o.nm.bo.OrderDetail">
+       select head_pic,provider_name,service_name,address
+        ,contact_phone,service_price,journey_fee,total_amount
+        ,book_start_time,book_end_time,order_status,service_id,evaluation_id
+
+        from order_info order_info JOIN user_info on user_id=provider_user_id
+
+        LEFT JOIN evaluation_info eval on eval.order_no=order_info.order_no
+
+        where order_info.order_no=#{orderNo}
+    </select>
+    <select id="getProviderOrderDetail" resultType="com.o2o.nm.bo.OrderDetail">
+       select service_name,address
+        ,contact_phone,service_price,journey_fee,total_amount
+        ,book_start_time,book_end_time,order_status,service_id,member_name
+        from order_info orderInfo left JOIN family_member member on member.member_id=orderInfo.member_id
+        where orderInfo.order_no=#{orderNo}
+    </select>
+    <select id="getCustomerOrders" resultType="com.o2o.nm.bo.OrderListItem">
+        select user.head_pic,orderInfo.service_name,DATE_FORMAT(orderInfo.create_time,'%Y-%m-%d %T')
+        as create_time,
+        DATE_FORMAT(orderInfo.book_start_time,'%Y年%m月%d日 %T') as book_start_time,
+        orderInfo.provider_name,orderInfo.total_amount,orderInfo.order_no,order_status
+        from user_info user JOIN order_info orderInfo on user.user_id=orderInfo.provider_user_id
+        where customer_user_id=#{userId} and order_status in
+        <foreach collection="orderStatus" separator="," item="status" open="(" close=")">
+            ${status}
+        </foreach>
+        order by orderInfo.create_time desc LIMIT #{page}, #{size}
+    </select>
+
+    <select id="getOrderDetailOfEvaluation" resultType="com.o2o.nm.bo.OrderEvaluation">
+        select user.head_pic,level,real_name,order_no,service_name,orderInfo.provider_user_id,provider_name,service_id
+
+         FROM user_info user JOIN order_info orderInfo ON provider_user_id=user.user_id
+
+         JOIN provider_info provider on provider.provider_user_id=user.user_id
+
+          where order_no=#{orderNo};
+    </select>
+    <select id="getProviderOrders" resultType="com.o2o.nm.bo.ProviderOrderListItem">
+        select orderInfo.service_name,address,DATE_FORMAT(orderInfo.book_start_time,'%Y-%m-%d %T')
+        as book_start_time,
+        orderInfo.order_no,order_status from order_info orderInfo
+        where provider_user_id=#{userId} and order_status in
+        <foreach collection="orderStatus" separator="," item="status" open="(" close=")">
+            ${status}
+        </foreach>
+        order by orderInfo.book_start_time desc LIMIT #{page}, #{size}
+    </select>
+
+    <select id="qryTimeoutOrdersByStatus" resultType="java.lang.String">
+        select order_no from order_info orderInfo
+        where order_status=#{orderStatus} and state_expire_time>CURRENT_TIMESTAMP()
+    </select>
+    <select id="getOrders" resultType="com.o2o.nm.vo.TimeRangeVo">
+       SELECT service_name as title ,book_start_time as start ,book_end_time as end,
+              order_no as id FROM order_info where order_status=#{status} and
+              provider_user_id=#{providerUserId} and book_start_time BETWEEN #{begin} and #{end}
+              order by start
+    </select>
+    <select id="getProviderProgramOrderInfo" resultType="com.o2o.nm.bo.ProviderProgramOrderInfo">
+        select orderInfo.service_name,address,DATE_FORMAT(orderInfo.book_start_time,'%Y-%m-%d')
+        as date,
+        date_format(orderInfo.book_start_time,'%p %h:%i') as time from order_info orderInfo
+        where order_no = #{orderNo}
+    </select>
+</mapper>

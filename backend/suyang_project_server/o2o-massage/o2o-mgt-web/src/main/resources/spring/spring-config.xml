@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<!-- 引入属性文件 -->
+	<context:property-placeholder  ignore-unresolvable="true"
+		location="classpath:dbconfig.properties,classpath:app.properties,classpath:shiro.properties" />
+   
+   	<!-- 自动扫描dao和service包(自动注入) -->
+	<context:component-scan base-package="cn.jeeweb.core.common.service.*" />
+	<!-- 扫描注解Bean -->
+	<context:component-scan base-package="cn.jeeweb.modules.**.service" />
+	<context:component-scan base-package="com.o2o.nm.**.service" />
+
+	<context:component-scan base-package="cn.jeeweb.core.interceptor">
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+	
+	<import resource="spring-mybatis.xml" />
+	<import resource="spring-cache.xml" />
+	<import resource="spring-shiro.xml" />
+</beans>

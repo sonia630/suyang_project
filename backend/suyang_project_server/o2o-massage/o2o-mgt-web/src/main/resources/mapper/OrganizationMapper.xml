@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.o2o.nm.sys.mapper.OrganizationMapper">
+    <update id="updateOrgPid">
+		update sys_org set parent_id = #{pid} where id = #{id}
+	</update>
+    <delete id="delOrgRoles">
+		delete from sys_org_role where org_id = #{orgId}
+	</delete>
+
+    <select id="getOrgsByParent" resultType="com.o2o.nm.sys.entity.SysOrg">
+		select c.*,count(user_id) as userCount from (select a.* from
+			sys_org as a where	parent_id = #{pid}
+			) as c
+			LEFT JOIN sys_org_user as b on c.id
+			= b.org_id
+			GROUP BY c.id
+	</select>
+
+    <select id="getUserCount" resultType="java.lang.Long">
+		select count(user_id) c2 from sys_org as a
+		join sys_org_user
+		as b on a.id = b.org_id and a.id= #{orgId}
+	</select>
+
+    <select id="getChildrenCountByPid" resultType="com.o2o.nm.sys.entity.OrgChildRenCount">
+        select parent_id,count(id) count from sys_org as a where parent_id in
+        <foreach collection="list" item="item" separator="," open="(" close=")">
+            #{item}
+        </foreach>
+        group by parent_id
+    </select>
+    <select id="getOrgRoles" resultType="SysRole">
+		select name,b.id from sys_org_role as a join sys_role as b
+		on b.id = a.role_id and a.org_id = #{orgId}
+	</select>
+</mapper>

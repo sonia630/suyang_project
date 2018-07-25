@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.o2o.nm.admin.mapper.ProviderInfoMapper">
+
+    <!-- 开启二级缓存 -->
+    <!-- <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>-->
+
+    <resultMap id="providerMap" type="com.o2o.nm.admin.vo.ProviderDetail">
+        <result column="user_id" jdbcType="VARCHAR" property="userInfo.userId"/>
+        <result column="name" jdbcType="VARCHAR" property="userInfo.name"/>
+        <result column="id_num" jdbcType="VARCHAR" property="userInfo.idNum"/>
+        <result column="phone" jdbcType="VARCHAR" property="userInfo.phone"/>
+        <result column="email" jdbcType="INTEGER" property="userInfo.email"/>
+        <result column="gender" jdbcType="INTEGER" property="userInfo.gender"/>
+        <result column="real_name" jdbcType="VARCHAR" property="userInfo.realName"/>
+        <result column="provider_edu_lev" jdbcType="VARCHAR"
+                property="providerInfo.providerEduLev"/>
+        <result column="provider_introduction" jdbcType="VARCHAR"
+                property="providerInfo.providerIntroduction"/>
+        <result column="provider_birth_place" jdbcType="VARCHAR"
+                property="providerInfo.providerBirthPlace"/>
+        <result column="health" jdbcType="VARCHAR" property="providerInfo.health"/>
+        <result column="health_report_time" jdbcType="DATE"
+                property="providerInfo.healthReportTime"/>
+        <result column="latitude" jdbcType="DECIMAL" property="providerInfo.latitude"/>
+        <result column="longitude" jdbcType="DECIMAL" property="providerInfo.longitude"/>
+        <result column="common_address" jdbcType="VARCHAR" property="providerInfo.commonAddress"/>
+        <result column="provider_id" jdbcType="VARCHAR" property="providerInfo.providerId"/>
+        <result column="status" jdbcType="INTEGER" property="providerInfo.status"/>
+        <result column="head_pic" jdbcType="VARCHAR" property="userInfo.headPic"/>
+    </resultMap>
+
+    <select id="getProviderDetailInfo" resultMap="providerMap">
+        SELECT user_id,name,id_num,phone,email,gender,real_name,
+         provider_edu_lev,provider_introduction,provider_birth_place,
+         health,health_report_time,latitude,longitude,common_address,
+         provider_id,provider.status,head_pic
+         FROM user_info user left join provider_info provider
+        on user.user_id = provider.provider_user_id where user_id = #{userId}
+    </select>
+</mapper>

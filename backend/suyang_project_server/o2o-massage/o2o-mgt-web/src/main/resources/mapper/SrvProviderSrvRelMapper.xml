@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.o2o.nm.admin.mapper.SrvProviderSrvRelMapper">
+
+    <!-- 开启二级缓存 -->
+<!--
+    <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
+-->
+    <update id="updatePriceAndEsTimeAndSort">
+        update srv_provider_srv_rel set price =#{price} ,estimated_time=#{estimatedTime},sort_order=#{sortOrder}
+          where provider_user_id = #{providerUserId} and service_id = #{serviceId}
+    </update>
+
+</mapper>

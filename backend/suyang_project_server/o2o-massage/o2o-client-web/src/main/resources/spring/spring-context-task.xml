@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+
+    <task:scheduled-tasks scheduler="taskScheduler">
+        <task:scheduled ref="providerConfirmTimeoutTask" method="doSchedule" cron="0 0/1 * * * *"/><!--每分钟 执行一次-->
+        <task:scheduled ref="payTimeoutTask" method="doSchedule" cron="0 0/1 * * * *"/><!-- 每天1点 执行一次-->
+    </task:scheduled-tasks>
+    <task:scheduler id="taskScheduler" pool-size="20"/>
+
+    <!--begin**************************业务逻辑处理类**************************begin-->
+    <!--订单确认超时-->
+    <bean id="providerConfirmTimeoutTask" class="com.o2o.massage.biz.task.ProviderConfirmTimeoutTask"/>
+
+    <!--订单确认超时-->
+    <bean id="payTimeoutTask" class="com.o2o.massage.biz.task.PayTimeOutTask"/>
+    <!--end****************************业务逻辑处理类****************************end-->
+
+
+</beans>

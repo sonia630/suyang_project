@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.o2o.nm.mapper.EvaluationInfoOwnerMapper">
+
+  <select id="getEvalList" resultType="com.o2o.nm.bo.ProviderEval">
+    select head_pic customerHeadPic,name customerName,eval.create_time evalTime,evalucation_desc description,service_name serviceName,
+      book_start_time serviceTime from evaluation_info eval join user_info user
+    on eval.create_by = user.user_id
+    join order_info orderInfo on orderInfo.order_no=eval.order_no
+    where eval.provider_user_id=#{providerId} order by evalTime limit #{start},#{size}
+  </select>
+  <select id="getEvalAllInfo" resultType="com.o2o.nm.bo.EvalAllInfo">
+    select count(1) total,sum(evaluation_score) totalScore from evaluation_info where provider_user_id=#{providerId};
+  </select>
+  <select id="getEvalListByScoreRange" resultType="com.o2o.nm.bo.ProviderEval">
+     select head_pic customerHeadPic,name customerName,eval.create_time evalTime,evalucation_desc description,service_name serviceName,
+      book_start_time serviceTime,evaluation_score score from evaluation_info eval join user_info user
+    on eval.create_by = user.user_id
+    join order_info orderInfo on orderInfo.order_no=eval.order_no
+    where eval.provider_user_id=#{providerId} and evaluation_score >=#{evalScoreBegin} and
+    <![CDATA[evaluation_score <=#{evalScoreEnd}]]> order by evalTime limit #{start},#{count}
+  </select>
+  <select id="getEvalListByScoreRangeCount" resultType="java.lang.Integer">
+     select count(1) from evaluation_info eval join user_info user
+    on eval.create_by = user.user_id
+    join order_info orderInfo on orderInfo.order_no=eval.order_no
+    where eval.provider_user_id=#{providerId} and evaluation_score >=#{evalScoreBegin} and
+    <![CDATA[evaluation_score <=#{evalScoreEnd}]]>
+  </select>
+</mapper>

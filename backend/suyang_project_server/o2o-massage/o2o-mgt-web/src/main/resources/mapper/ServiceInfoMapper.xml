@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.o2o.nm.admin.mapper.ServiceInfoMapper">
+
+    <!-- 开启二级缓存 -->
+    <!--
+        <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
+    -->
+    <resultMap id="serviceDefMap" type="com.o2o.nm.admin.vo.ServiceDefVo">
+        <id column="service_id" jdbcType="VARCHAR" property="serviceInfo.serviceId"/>
+        <result column="service_name" jdbcType="VARCHAR" property="serviceInfo.serviceName"/>
+        <result column="service_summary" jdbcType="VARCHAR" property="serviceInfo.serviceSummary"/>
+        <result column="description" jdbcType="VARCHAR" property="serviceInfo.description"/>
+        <result column="sort_order" jdbcType="INTEGER" property="serviceInfo.sortOrder"/>
+        <result column="status" jdbcType="INTEGER" property="serviceInfo.status"/>
+        <result column="estimated_time" jdbcType="INTEGER"
+                property="srvProviderSrvRel.estimatedTime"/>
+        <result column="price" jdbcType="DECIMAL" property="srvProviderSrvRel.price"/>
+        <result column="provider_user_id" jdbcType="VARCHAR"
+                property="srvProviderSrvRel.providerUserId"/>
+        <result column="id" jdbcType="BIGINT" property="srvProviderSrvRel.id"/>
+        <result column="pic" jdbcType="VARCHAR" property="serviceInfo.pic"/>
+    </resultMap>
+    <update id="changeServiceStatus">
+        update service_info set status = #{status}
+        <where>
+            service_id in
+            <foreach collection="serviceIds" item="item" open="(" close=")" separator=",">
+                #{item}
+            </foreach>
+        </where>
+    </update>
+
+
+    <select id="selectServiceDefs" resultMap="serviceDefMap">
+        select service.service_id,service.service_name,service.service_summary,service.description
+        ,service.sort_order,service.status,mapping.estimated_time,mapping.price
+        ,mapping.id
+        from service_info as service JOIN srv_provider_srv_rel as mapping
+
+        on service.service_id=mapping.service_id where provider_user_id=#{userId} order by sort_order
+    </select>
+
+    <select id="selectServiceDef" resultMap="serviceDefMap">
+        select service.service_id,service.service_name,service.service_summary,service.description
+        ,service.sort_order,service.pic,
+        <if test="defaultProvider">
+            service.sort_order
+        </if>
+        <if test="!defaultProvider">
+            mapping.sort_order
+        </if>
+        ,service.status,mapping.estimated_time,mapping.price,mapping.id
+        from service_info as service JOIN srv_provider_srv_rel as mapping
+        on service.service_id=mapping.service_id where provider_user_id=#{userId} and service.service_id = #{serviceId}
+    </select>
+
+    <select id="getUserRelationServices" resultMap="serviceDefMap">
+        select service.service_id,service.service_name,service.service_summary,service.description
+          ,service.sort_order,service.status,mapping.estimated_time,mapping.price
+          ,mapping.id,mapping.provider_user_id
+        from service_info as service JOIN srv_provider_srv_rel as mapping
+            on service.service_id=mapping.service_id
+        where provider_user_id=#{defaultProviderId} and
+
+        mapping.service_id not in (
+          SELECT service_id from srv_provider_srv_rel where provider_user_id=#{providerId})
+
+          UNION
+
+        select service.service_id,service.service_name,service.service_summary,service.description
+          ,mapping.sort_order,service.status,mapping.estimated_time,mapping.price
+          ,mapping.id,mapping.provider_user_id
+        from service_info as service JOIN srv_provider_srv_rel as mapping
+
+            on service.service_id=mapping.service_id
+
+        where provider_user_id=#{providerId}
+
+
+        order by sort_order;
+    </select>
+    <select id="getRelationService" resultMap="serviceDefMap">
+        select
+    </select>
+
+</mapper>

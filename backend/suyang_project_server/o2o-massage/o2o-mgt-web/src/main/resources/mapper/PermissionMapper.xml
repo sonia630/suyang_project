@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.o2o.nm.sys.mapper.PermissionMapper">
+
+    <select id="getAllResources" resultType="Permission">
+        select fp.*
+        from sys_permission as fp
+        where fp.menu = 0
+    </select>
+    <select id="getResources" resultType="Permission">
+        select permission.*
+        from
+        user_info as user
+        join
+        sys_user_role as ur on
+        user.id=ur.user_id
+        join
+        sys_role as role on
+        ur.role_id=role.id left JOIN
+        sys_role_permission as rp ON
+        rp.role_id=role.role_id left join
+        sys_permission as permission on
+        permission.id = rp.permission_id
+        where user.user_id = #{userId} and permission.menu = 0
+    </select>
+
+    <select id="getPermissionsByUserId" resultType="Permission">
+        SELECT DISTINCT t.*
+        from sys_permission t
+        LEFT JOIN sys_role_permission rm on t.id=rm.permission_id
+        LEFT JOIN sys_user_role ur on rm.role_id=ur.role_id
+        WHERE ur.user_id= #{userId}
+        <if test="type!=null">
+            and menu=#{type}
+        </if>
+        union
+        select DISTINCT t.* from
+        sys_permission t
+        LEFT JOIN
+        sys_role_permission as rp
+        on t.id=rp.permission_id
+        LEFT JOIN sys_org_role org_role
+        on rp.role_id=org_role.role_id
+        left JOIN sys_org_user ou
+        on ou.org_id=org_role.org_id
+        WHERE ou.user_id=#{userId}
+        <if test="type!=null">
+            and menu=#{type}
+        </if>
+        ORDER BY sort;
+    </select>
+</mapper>

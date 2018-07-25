@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="LOG_HOME" value="${catalina.base}/logs"/>
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%d{yyyy/MM/dd HH:mm:ss.SSS}][%X{bingo_trace_id}][%p][%logger{5}:%method:%L][%thread] %m%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <!-- 本应用自己的日志,按天分割,catalina.out里不记录 -->
+    <appender name="businessAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/business.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/business.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>10</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>[%d{yyyy/MM/dd HH:mm:ss.SSS}][%X{bingo_trace_id}][%p][%logger{5}:%method:%L][%thread] %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="businessApiCallAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/business-api-call.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/business-api-call.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>[%d{yyyy/MM/dd HH:mm:ss.SSS}][%X{bingo_trace_id}][%p][%logger{5}:%method:%L][%thread] %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 本应用自己的日志,按天分割,catalina.out里不记录 -->
+
+    <!-- catalina.out 只记录error日志 -->
+    <root level="info">
+        <appender-ref ref="console"/>
+    </root>
+
+    <logger name="com.o2o" level="info" additivity="${log_append_to_console}">
+        <appender-ref ref="businessAppender"/>
+    </logger>
+
+    <logger name="BussinessLog.ApiCallLog" level="INFO" additivity="false">
+        <appender-ref ref="businessApiCallAppender"/>
+    </logger>
+
+    <logger name="com.o2o.massage.dao.mapper" level="DEBUG" additivity="false">
+        <appender-ref ref="businessAppender"/>
+    </logger>
+</configuration>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.o2o.nm.sys.mapper.UserInfoMapper">
+
+    <update id="cancelUser">
+        update user_info set status=#{status} where id in
+        <foreach collection="list" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </update>
+
+    <!-- 开启二级缓存 TODO-->
+    <!--<cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>-->
+
+    <select id="selectUserPage" resultType="UserInfo">
+        select @row := @row + 1 as num,t.name,t.phone,t.login_date,t.user_id,t.status,t.user_type from user_info
+        t,(SELECT @row := #{offset}) r
+        <where>
+            user_id!= #{superAdmin}
+            <if test="searchUser.userName!=null and searchUser.userName!=''">
+                and name LIKE CONCAT('%',#{searchUser.userName},'%')
+            </if>
+            <if test="searchUser.startDate!=null and searchUser.finishDate!=null">
+                and login_date between #{searchUser.startDate} and #{searchUser.finishDate}
+            </if>
+            <if test="searchUser.startDate!=null and searchUser.finishDate==null">
+                and login_date between ${searchUser.startDate} and now()
+            </if>
+            <if test="searchUser.startDate==null and searchUser.finishDate!=null">
+                and login_date between now() and #{searchUser.finishDate}
+            </if>
+            <if test="searchUser.orgId!=null">
+                <if test="searchUser.includeUser!=null and searchUser.includeUser!=''">
+                    and t.user_id in ( select user_id from sys_org_user where org_id
+                    =#{searchUser.orgId})
+                </if>
+                <if test="searchUser.includeUser==null or searchUser.includeUser==''">
+                    and t.user_id not in ( select user_id from sys_org_user where org_id
+                    =#{searchUser.orgId})
+                </if>
+            </if>
+            <if test="searchUser.codes!=null">
+                and user_type in
+                <foreach collection="searchUser.codes" item="item" separator="," open="(" close=")">
+                    #{item}
+                </foreach>
+            </if>
+        </where>
+    </select>
+    <select id="getUserRoles" resultType="SysRole">
+        select name,b.id from sys_user_role as a join
+        sys_role as b
+        on b.id = a.role_id and a.user_id = #{userId}
+    </select>
+
+    <update id="updateSysUserWithOutPwd">
+        update user_info set name = #{name} ,update_time = #{update_time},update_by = #{update_by}
+         where user_id = #{userId}
+    </update>
+    <update id="updateLoginInfo">
+        update user_info set login_date=#{date} where user_id = #{userId}
+    </update>
+    <update id="changeStatus">
+        update user_info set status = #{status} where user_id in
+        <foreach collection="userIds" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </update>
+
+</mapper>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.o2o.nm.mapper.ProviderScheduleOwnerMapper">
+    <update id="cancelProviderSchedule">
+        UPDATE provider_schedule SET order_no = null,update_by = #{updateBy},update_time =
+        #{updateTime,jdbcType=TIMESTAMP}
+        <where>
+            order_no = #{orderNo}
+        </where>
+    </update>
+    <delete id="deleteProviderScheduleByDates">
+        DELETE FROM provider_schedule WHERE provider_id=#{providerId} and order_no is NULL and date
+        in
+        <foreach collection="dates" close=")" separator="," open="(" item="date">
+            #{date}
+        </foreach>
+    </delete>
+
+    <select id="getProviderSchedules"
+            resultType="com.o2o.massage.dao.entity.ProviderSchedule"
+            parameterType="com.o2o.nm.vo.ProviderScheduleVo">
+        select schedule.id, latitude, longitude, provider_id, date, slot from provider_schedule schedule JOIN srv_provider_srv_rel
+        on schedule.provider_id = provider_user_id
+        WHERE latitude >= #{swLatitude}
+        and longitude >= #{swLongitude} and  <![CDATA[latitude<= #{neLatitude}]]>
+        and <![CDATA[longitude<= #{neLongitude}]]> and date = #{date}
+        and order_no is null
+    </select>
+    <select id="getProviderSchedulesByUserId"
+            resultType="com.o2o.massage.dao.entity.ProviderSchedule">
+        select date,slot,order_no from provider_schedule where provider_id=#{providerUserId} and date > #{start}
+    </select>
+</mapper>
